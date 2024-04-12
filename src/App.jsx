@@ -3,9 +3,10 @@ import {format } from 'date-fns'
 import { bossList } from './bossList'
 
 function App() {
-  const [guessedBoss, setGuessedBoss] = useState(`Kree'arra`);
+  const [guessedBoss, setGuessedBoss] = useState('');
+  const [guessedIndex, setGuessedIndex] = useState(-1);
   const [correctBoss, setCorrectBoss] = useState({});
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState('Please select a guess');
 
 
   useEffect(() => {
@@ -23,16 +24,46 @@ function App() {
     })
   },[])
 
-  console.log(bossList);
   console.log(`The correctBoss name  ${correctBoss.name}`);
+  console.log(`You have guessed ${name}`)
   console.log(`You have guessed ${guessedBoss}`)
-  console.log(correctBoss.release);
 
-  if (correctBoss.name === guessedBoss) {
-    console.log("Correct Guess");
-  } else {
-    console.log("Incorrect guess");
+  function handleGuess(e) {
+    const guessedNameValue = e.target.value;
+    let indexVal = bossList.findIndex(x => x.name === `${guessedNameValue}`)
+    setGuessedBoss(guessedNameValue);
+    setGuessedIndex(indexVal);
+    console.log(guessedNameValue)
+    console.log(indexVal);
+    if (correctBoss.name === guessedNameValue) {
+      console.log("Correct Guess");
+      setStatus('Correct.')
+    } else {
+      console.log("Incorrect guess");
+      setStatus('Incorrect');
+    }
   }
+
+  function showAll(e) {
+    let bossVal = e.target.value;
+    setGuessedIndex(e.target.value);
+    console.log(bossVal);
+    console.log(bossList[bossVal].name)
+    console.log(bossList[bossVal].level)
+    console.log(bossList[bossVal].health)
+    console.log(bossList[bossVal].attack)
+    console.log(bossList[bossVal].region)
+    console.log(bossList[bossVal].release)
+    console.log(bossList[bossVal].hasPet)
+  }
+
+  // let keys = Object.keys(bossList);
+  // for (let i = 0; i < keys.length; i++) {
+  //   let val = bossList[keys[i]];
+  //   console.log(val.name);
+  // }
+
+  // console.log(bossList[28])
 
 
   return (
@@ -40,12 +71,41 @@ function App() {
     <div>You have guessed {guessedBoss}</div>
     <div>The correct boss was {correctBoss.name} {correctBoss.level} {correctBoss.health} {correctBoss.attack} {correctBoss.region} {correctBoss.release} {correctBoss.hasPet} </div>
     <div>{status}</div>
-    <button onClick={() => {setGuessedBoss(`General Graardor`)}}>General Graardor</button>
-    <button onClick={() => {setGuessedBoss(`Kree'arra`)}}>Kree</button>
-    <button onClick={() => {setGuessedBoss(`Commander Zilyana`)}}>Commander Zilyana</button>
-    <button onClick={() => {setGuessedBoss(`K'ril Tsutsaroth`)}}>K&apos;ril Tsutsaroth</button>
+
+    <button id="25" onClick={showAll}>25</button>
+    <input htmlFor="bossId" type='number' onChange={showAll}></input>
+    <select 
+      value={guessedBoss}
+      onChange={handleGuess}
+    >
+      {bossList.map((boss) => <option key={boss.name} id={boss.name} value={boss.name}>{boss.name}</option>)}
+    </select>
+    <GuessedIndexInfo guessedIndex={guessedIndex} bossList={bossList} />
     </>
   )
+}
+
+function GuessedIndexInfo({guessedIndex, bossList}) {
+  console.log(bossList[guessedIndex])
+
+  if (guessedIndex === -1) {
+    return (
+      <div>make a guess</div>
+  )
+  } else {
+    return (
+      <div>
+        <div>{(bossList[guessedIndex].name)}</div>
+        <div>{(bossList[guessedIndex].level)}</div>
+        <div>{(bossList[guessedIndex].health)}</div>
+        <div>{(bossList[guessedIndex].attack)}</div>
+        <div>{(bossList[guessedIndex].region)}</div>
+        <div>{(bossList[guessedIndex].release)}</div>
+        <div>{(bossList[guessedIndex].hasPet)}</div>
+      </div>
+    )
+  }
+
 }
 
 export default App

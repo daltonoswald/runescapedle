@@ -11,15 +11,6 @@ export const bossList = [
         hasPet: false,
     }, 
     {
-        name: `Ahrim the Blighted`,
-        level: 98,
-        health: 100,
-        attack: "Magic",
-        region: "Morytania",
-        release: `5,9,2005`,
-        hasPet: false,
-    }, 
-    {
         name: `Karil the Tainted`,
         level: 98,
         health: 100,
