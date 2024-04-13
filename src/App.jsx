@@ -1,12 +1,16 @@
 import { useState, useEffect } from 'react'
 import {format } from 'date-fns'
 import { bossList } from './bossList'
+import reactIcon from "./assets/react.svg"
+import SearchableDropdown from './SearchableDropdown';
 
 function App() {
   const [guessedBoss, setGuessedBoss] = useState('');
   const [guessedIndex, setGuessedIndex] = useState(-1);
   const [correctBoss, setCorrectBoss] = useState({});
   const [status, setStatus] = useState('Please select a guess');
+
+  const [value, setValue] = useState("")
 
 
   useEffect(() => {
@@ -28,8 +32,9 @@ function App() {
   console.log(`You have guessed ${name}`)
   console.log(`You have guessed ${guessedBoss}`)
 
-  function handleGuess(e) {
-    const guessedNameValue = e.target.value;
+  function handleGuess(name) {
+    const guessedNameValue = name;
+    console.log(guessedNameValue);
     let indexVal = bossList.findIndex(x => x.name === `${guessedNameValue}`)
     setGuessedBoss(guessedNameValue);
     setGuessedIndex(indexVal);
@@ -80,7 +85,18 @@ function App() {
     >
       {bossList.map((boss) => <option key={boss.name} id={boss.name} value={boss.name}>{boss.name}</option>)}
     </select>
+
     <GuessedIndexInfo guessedIndex={guessedIndex} bossList={bossList} />
+
+    <SearchableDropdown 
+      options={bossList}
+      label="name"
+      id="id"
+      selectedVal={value}
+      handleChange={(val) => setValue(val)}
+      handleGuess={handleGuess}
+      />
+
     </>
   )
 }
