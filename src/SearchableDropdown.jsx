@@ -1,8 +1,9 @@
+/* eslint-disable react/jsx-key */
 import { useEffect, useRef, useState } from "react";
 import './searchableDropdown.css'
 
 const SearchableDropdown = ({
-    options, label, id, selectedVal, handleChange, handleGuess
+    options, label, id, selectedVal, handleChange, handleGuess, level, image, region
 }) => {
     const [query, setQuery] = useState('');
     const [isOpen, setIsOpen] = useState(false);
@@ -15,10 +16,11 @@ const SearchableDropdown = ({
     }, []);
 
     const selectOption = (option) => {
-        setQuery(() => "");
-        handleChange(option[label]);
-        setIsOpen((isOpen) => !isOpen);
-        console.log(option[label]);
+        // setQuery(() => "");
+        // handleChange(option[label]);
+        // setIsOpen((isOpen) => !isOpen);
+        // console.log(option[label]);
+        // console.log(option[level]);
         handleGuess(option[label]);
     }
 
@@ -26,12 +28,12 @@ const SearchableDropdown = ({
         setIsOpen(e && e.target === inputRef.current);
     }
 
-    const getDisplayValue = () => {
-        if (query) return query;
-        if (selectedVal) return selectedVal;
+    // const getDisplayValue = () => {
+    //     if (query) return query;
+    //     if (selectedVal) return selectedVal;
 
-        return ""
-    }
+    //     return ""
+    // }
 
     const filter = (options) => {
         return options.filter(
@@ -40,41 +42,6 @@ const SearchableDropdown = ({
     };
 
     return (
-        // <div className="dropdown">
-        //     <div className="control">
-        //         <div className="selected-value">
-        //     <input 
-        //         ref={inputRef}
-        //         type="text"
-        //         value={getDisplayValue()}
-        //         name="searchTerm"
-        //         onChange={(e) => {
-        //             setQuery(e.target.value);
-        //             handleChange(null);
-        //         }}
-        //         onClick={toggle}
-        //         />
-        //     </div>
-        //     <div className={`arrow ${isOpen ? "open" : ""}`}></div>
-        //     </div>
-
-        //     <div className={`options ${isOpen ? "open" : ""}`}>
-        //         {filter(options).map((option, index) => {
-        //             return (
-        //                  <div 
-        //                  id={option.name}
-        //                     onClick={() => selectOption(option)}
-        //                     className={`option ${
-        //                         options[label] === selectedVal ? "selected" : ""
-        //                     }`}
-        //                     key={`${id}-${index}`}
-        //                     >
-        //                     {option[label]}
-        //                 </div>
-        //             )
-        //         })}
-        //         </div>
-        //     </div>
 
         <div className="dropdown">
         <div className="control">
@@ -82,7 +49,8 @@ const SearchableDropdown = ({
         <input 
             ref={inputRef}
             type="text"
-            value={getDisplayValue()}
+            // value={getDisplayValue()}
+            value=""
             name="searchTerm"
             onChange={(e) => {
                 setQuery(e.target.value);
@@ -98,18 +66,19 @@ const SearchableDropdown = ({
             {filter(options).map((option, index) => {
                 return (
                     <div 
-                    id={option.name}
+                        id={option.name}
                         onClick={() => selectOption(option)}
                         className={`option ${
                             options[label] === selectedVal ? "selected" : ""
                         }`}
                         key={`${id}-${index}`}
-                        >
-                        {option[label]}
+                    >
+                        <img src={(option.image)} className="boss-image"/> 
+                        {option[label]} 
                     </div>
                 )
             })}
-            </div>
+        </div>
         </div>
     )
 }

@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import {format } from 'date-fns'
 import { bossList } from './bossList'
-import reactIcon from "./assets/react.svg"
+import './styles.css'
 import SearchableDropdown from './SearchableDropdown';
 
 function App() {
@@ -38,9 +38,6 @@ function App() {
     console.log(guessedNameValue);
     let indexVal = bossList.findIndex(x => x.name === `${guessedNameValue}`)
     setGuessedBosses([...guessedBosses, indexVal]);
-    console.log(guessedBosses);
-    console.log(guessedNameValue)
-    console.log(indexVal);
     if (correctBoss.name === guessedNameValue) {
       console.log("Correct Guess");
       setStatus('Correct.')
@@ -48,6 +45,7 @@ function App() {
       console.log("Incorrect guess");
       setStatus('Incorrect');
     }
+    console.log(name);
   }
 
   // let keys = Object.keys(bossList);
@@ -89,6 +87,9 @@ function App() {
       options={bossList}
       label="name"
       id="id"
+      level="level"
+      image="image"
+      region="region"
       selectedVal={value}
       handleChange={(val) => setValue(val)}
       handleGuess={handleGuess}
@@ -112,6 +113,7 @@ function BossesGuessed({guessedBosses, bossList}) {
       <div className="guess-container">
         {guessedBosses.map((boss) => 
           <div className="guess">
+            <img src={(bossList[boss].image)} className="boss-image"/>
             <div>{(bossList[boss].name)}</div>
             <div>{(bossList[boss].level)}</div>
             <div>{(bossList[boss].health)}</div>
