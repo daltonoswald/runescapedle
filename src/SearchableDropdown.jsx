@@ -28,12 +28,12 @@ const SearchableDropdown = ({
         setIsOpen(e && e.target === inputRef.current);
     }
 
-    // const getDisplayValue = () => {
-    //     if (query) return query;
-    //     if (selectedVal) return selectedVal;
+    const getDisplayValue = () => {
+        if (query) return query;
+        if (selectedVal) return selectedVal;
 
-    //     return ""
-    // }
+        return ""
+    }
 
     const filter = (options) => {
         return options.filter(
@@ -49,8 +49,8 @@ const SearchableDropdown = ({
         <input 
             ref={inputRef}
             type="text"
-            // value={getDisplayValue()}
-            value=""
+            value={getDisplayValue()}
+            // value=""
             name="searchTerm"
             onChange={(e) => {
                 setQuery(e.target.value);

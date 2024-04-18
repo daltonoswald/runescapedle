@@ -4,6 +4,7 @@ import {format } from 'date-fns'
 import { bossList } from './bossList'
 import './styles.css'
 import SearchableDropdown from './SearchableDropdown';
+import Gameboard from './Gameboard';
 
 function App() {
   const [guessedBosses, setGuessedBosses] = useState([]);
@@ -48,35 +49,6 @@ function App() {
     console.log(name);
   }
 
-  // let keys = Object.keys(bossList);
-  // for (let i = 0; i < keys.length; i++) {
-  //   let val = bossList[keys[i]];
-  //   console.log(val.name);
-  // }
-
-  // console.log(bossList[28])
-
-  if (guessedBosses.length === 0) {
-    return (
-      <>
-      <div>No guesses yet</div>
-      <div>The correct boss was {correctBoss.name} {correctBoss.level} {correctBoss.health} {correctBoss.attack} {correctBoss.region} {correctBoss.release} {correctBoss.hasPet} </div>
-      <div>{status}</div>
-  
-      <BossesGuessed guessedIndex={guessedIndex} guessedBosses={guessedBosses} />
-  
-      <SearchableDropdown 
-        options={bossList}
-        label="name"
-        id="id"
-        selectedVal={value}
-        handleChange={(val) => setValue(val)}
-        handleGuess={handleGuess}
-        />
-  
-      </>
-    )
-  } else {
   return (
     <>
     {/* <div>You have guessed {bossList[guessedBosses].name}</div> */}
@@ -94,38 +66,10 @@ function App() {
       handleChange={(val) => setValue(val)}
       handleGuess={handleGuess}
       />
-
-    <BossesGuessed guessedBosses={guessedBosses} bossList={bossList} />
+    <Gameboard guessedBosses={guessedBosses} bossList={bossList} />
 
     </>
   )
-}
-}
-
-function BossesGuessed({guessedBosses, bossList}) {
-
-  if (guessedBosses.length === 0) {
-    return (
-      <div></div>
-  )
-  } else {
-    return (
-      <div className="guess-container">
-        {guessedBosses.map((boss) => 
-          <div className="guess">
-            <img src={(bossList[boss].image)} className="boss-image"/>
-            <div>{(bossList[boss].name)}</div>
-            <div>{(bossList[boss].level)}</div>
-            <div>{(bossList[boss].health)}</div>
-            <div>{(bossList[boss].attack)}</div>
-            <div>{(bossList[boss].region)}</div>
-            <div>{(bossList[boss].release)}</div>
-            <div>{(bossList[boss].hasPet)}</div>
-          </div>
-        )}
-      </div>
-      )
-  }
 }
 
 

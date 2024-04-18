@@ -1,0 +1,34 @@
+.guess-row-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.row-header {
+    width: 8vw;
+    height: 4vw;
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.guess-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin-top: 1vh;
+}
+
+.boss-attribute {
+    width: 8vw;
+    height: 8vw;
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
