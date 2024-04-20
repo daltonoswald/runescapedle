@@ -25,10 +25,10 @@ function App() {
       attack: randomBoss.attack,
       region: randomBoss.region,
       // release: randomBoss.release,
-      release: format(new Date(randomBoss.release), 'MM-dd-yyyy'),
+      release: randomBoss.release,
       hasPet: randomBoss.hasPet,
     })
-  },[])
+  },[bossList])
 
   console.log(`The correctBoss name  ${correctBoss.name}`);
   console.log(`You have guessed ${guessedBosses}`)
@@ -66,7 +66,7 @@ function App() {
       handleChange={(val) => setValue(val)}
       handleGuess={handleGuess}
       />
-    <Gameboard guessedBosses={guessedBosses} bossList={bossList} />
+    <Gameboard guessedBosses={guessedBosses} bossList={bossList} correctBoss={correctBoss} />
 
     </>
   )

@@ -32,3 +32,15 @@
     align-items: center;
     text-align: center;
 }
+
+#correct {
+    background-color: green;
+}
+
+#incorrect {
+    background-color: red;
+}
+
+#almost {
+    background-color: orange;
+}

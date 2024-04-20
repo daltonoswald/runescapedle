@@ -8,7 +8,7 @@ export const bossList = [
         health: 100,
         attack: "Magic",
         region: "Morytania",
-        release: `5,9,2005`,
+        release: 2005,
         hasPet: false,
         image: ahrim,
     },
@@ -18,7 +18,7 @@ export const bossList = [
         health: 450,
         attack: "Magic/Melee/Ranged",
         region: "Wilderness",
-        release: `01,25,2023`,
+        release: 2023,
         hasPet: true,
     }, 
     {
@@ -27,7 +27,7 @@ export const bossList = [
         health: 500,
         attack: "Melee",
         region: "Varlamore",
-        release: `03,20,2024`,
+        release: 2024,
         hasPet: false,
     },
     {
@@ -36,7 +36,7 @@ export const bossList = [
         health: 500,
         attack: "Melee",
         region: "Varlamore",
-        release: `03,20,2024`,
+        release: 2024,
         hasPet: false,
     },
     {
@@ -45,7 +45,7 @@ export const bossList = [
         health: 1000,
         attack: "Magic/Melee/Ranged",
         region: "Wilderness",
-        release: `03,13,2014`,
+        release: 2014,
         hasPet: true,
     }, 
     {
@@ -54,7 +54,7 @@ export const bossList = [
         health: 150,
         attack: "Melee",
         region: "Wilderness",
-        release: `01,25,2023`,
+        release: 2023,
         hasPet: true,
     }, 
     {
@@ -63,7 +63,7 @@ export const bossList = [
         health: 250,
         attack: "Magic/Melee/Ranged",
         region: "Wilderness",
-        release: `02,20,2006`,
+        release: 2006,
         hasPet: true,
     }, 
     {
@@ -72,7 +72,7 @@ export const bossList = [
         health: 225,
         attack: "Magic",
         region: "Wilderness",
-        release: `03,13,2014`,
+        release: 2014,
         hasPet: true,
     }, 
     {
@@ -81,7 +81,7 @@ export const bossList = [
         health: 255,
         attack: "Magic/Melee",
         region: "Asgarnia",
-        release: `10,17,2013`,
+        release: 2013,
         hasPet: true,
     },
     {
@@ -90,7 +90,7 @@ export const bossList = [
         health: 2000,
         attack: "Magic/Melee",
         region: "Wilderness",
-        release: `11,16,2014`,
+        release: 2014,
         hasPet: true,
     }, 
     {
@@ -99,7 +99,7 @@ export const bossList = [
         health: 225,
         attack: "Melee/Ranged",
         region: "Wilderness",
-        release: `03,13,2014`,
+        release: 2014,
         hasPet: false,
     }, 
     {
@@ -108,7 +108,7 @@ export const bossList = [
         health: 255,
         attack: "Magic",
         region: "Fremennik Province",
-        release: `11,07,2005`,
+        release: 2005,
         hasPet: true,
     },
     {
@@ -117,7 +117,7 @@ export const bossList = [
         health: 255,
         attack: "Melee",
         region: "Fremennik Province",
-        release: `11,07,2005`,
+        release: 2005,
         hasPet: true,
     },
     {
@@ -126,7 +126,7 @@ export const bossList = [
         health: 255,
         attack: "Ranged",
         region: "Fremennik Province",
-        release: `11,07,2005`,
+        release: 2005,
         hasPet: true,
     },
     {
@@ -135,7 +135,7 @@ export const bossList = [
         health: 200,
         attack: "Melee/Ranged",
         region: "Misthalin",
-        release: `09,07,2017`,
+        release: 2017,
         hasPet: false,
     },
     {
@@ -144,7 +144,7 @@ export const bossList = [
         health: 100,
         attack: "Melee",
         region: "Morytania",
-        release: `5,9,2005`,
+        release: 2005,
         hasPet: false,
     }, 
     {
@@ -153,7 +153,7 @@ export const bossList = [
         health: 440,
         attack: "Magic/Melee",
         region: "Fremenik Province",
-        release: `07,27,2023`,
+        release: 2023,
         hasPet: true,
     }, 
     {
@@ -162,7 +162,7 @@ export const bossList = [
         health: 500,
         attack: "Melee",
         region: "Varlamore",
-        release: `03,20,2024`,
+        release: 2024,
         hasPet: false,
     },
     {
@@ -171,7 +171,7 @@ export const bossList = [
         health: 255,
         attack: "Melee/Ranged",
         region: "Asgarnia",
-        release: `10,17,2013`,
+        release: 2013,
         hasPet: true,
     },
     {
@@ -180,7 +180,7 @@ export const bossList = [
         health: 200,
         attack: "Melee",
         region: "Asgarnia",
-        release: `03, 07, 2006`,
+        release: 2006,
         hasPet: true,
     },
     {
@@ -189,7 +189,7 @@ export const bossList = [
         health: 100,
         attack: "Melee",
         region: "Morytania",
-        release: `5,9,2005`,
+        release: 2005,
         hasPet: false,
     },
     {
@@ -198,7 +198,7 @@ export const bossList = [
         health: 510,
         attack: "Magic/Melee/Ranged",
         region: "Kharidian Desert",
-        release: `09,07,2004`,
+        release: 2004,
         hasPet: true,
     }, 
     {
@@ -207,7 +207,7 @@ export const bossList = [
         health: 100,
         attack: "Ranged",
         region: "Morytania",
-        release: `5,9,2005`,
+        release: 2005,
         hasPet: false,
     },
     {
@@ -216,7 +216,7 @@ export const bossList = [
         health: 240,
         attack: "Melee/Dragonfire",
         region: "Wilderness",
-        release: `09,24,2002`,
+        release: 2002,
         hasPet: true,
     }, 
     {
@@ -225,7 +225,7 @@ export const bossList = [
         health: 255,
         attack: "Magic/Melee",
         region: "Asgarnia",
-        release: `10,17,2013`,
+        release: 2013,
         hasPet: true,
     },
     {
@@ -234,7 +234,7 @@ export const bossList = [
         health: 255,
         attack: "Mage/Range/Melee",
         region: "Asgarnia",
-        release: `10,17,2013`,
+        release: 2013,
         hasPet: true,
     },
     {
@@ -243,7 +243,7 @@ export const bossList = [
         health: 900,
         attack: "Magic/Melee/Ranged",
         region: "Kharidian Desert",
-        release: `07,27,2023`,
+        release: 2023,
         hasPet: true,
     }, 
     {
@@ -252,7 +252,7 @@ export const bossList = [
         health: 3400,
         attack: "Magic/Melee/Ranged",
         region: "Asgarnia",
-        release: `01,05, 20222`,
+        release: 2022,
         hasPet: true,
     }, 
     {
@@ -261,7 +261,7 @@ export const bossList = [
         health: 2400,
         attack: "Magic/Melee/Ranged",
         region: "Morytania",
-        release: `02,06,2020`,
+        release: 2020,
         hasPet: true,
     }, 
     {
@@ -270,7 +270,7 @@ export const bossList = [
         health: 850,
         attack: "Magic/Melee/Ranged",
         region: "Fremenik Province",
-        release: `01,11,2023`,
+        release: 2023,
         hasPet: true,
     }, 
     {
@@ -279,7 +279,7 @@ export const bossList = [
         health: 3200,
         attack: "Magic/Melee/Ranged",
         region: "Morytania",
-        release: `06,30,2021`,
+        release: 2021,
         hasPet: true,
     }, 
     {
@@ -288,7 +288,7 @@ export const bossList = [
         health: 1250,
         attack: "Magic/Ranged",
         region: "Wilderness",
-        release: `02,02,2022`,
+        release: 2022,
         hasPet: false,
     }, 
     {
@@ -297,7 +297,7 @@ export const bossList = [
         health: 400,
         attack: "Melee/Ranged",
         region: "Kourend",
-        release: `07,04,2019`,
+        release: 2019,
         hasPet: true,
     },
     {
@@ -306,7 +306,7 @@ export const bossList = [
         health: 200,
         attack: 'Melee',
         region: 'Wilderness',
-        release: `03,13,2014`,
+        release: 2014,
         hasPet: true,
     }, 
     {
@@ -315,7 +315,7 @@ export const bossList = [
         health: 500,
         attack: "Magic/Melee/Ranged",
         region: "Misthalin",
-        release: `01,24,2024`,
+        release: 2024,
         hasPet: true,
     },
     {
@@ -324,7 +324,7 @@ export const bossList = [
         health: 515,
         attack: "Magic/Melee/Ranged",
         region: "Wilderness",
-        release: `01,25,2023`,
+        release: 2023,
         hasPet: true,
     }, 
     {
@@ -333,7 +333,7 @@ export const bossList = [
         health: 100,
         attack: "Melee",
         region: "Morytania",
-        release: `5,9,2005`,
+        release: 2005,
         hasPet: false,
     }, 
     {
@@ -342,7 +342,7 @@ export const bossList = [
         health: 700,
         attack: "Melee",
         region: "Kourend",
-        release: `07,27,2023`,
+        release: 2023,
         hasPet: true,
     }, 
     {
@@ -351,7 +351,7 @@ export const bossList = [
         health: 850,
         attack: "Magic/Melee/Ranged",
         region: "Wilderness",
-        release: `03,13,2014`,
+        release: 2014,
         hasPet: true,
     }, 
     {
@@ -360,7 +360,7 @@ export const bossList = [
         health: 100,
         attack: "Melee",
         region: "Morytania",
-        release: `5,9,2005`,
+        release: 2025,
         hasPet: false,
     }, 
     {
@@ -369,7 +369,7 @@ export const bossList = [
         health: 150,
         attack: "Magic/Melee",
         region: "Wilderness",
-        release: `03,13,2014`,
+        release: 2014,
         hasPet: true,
     }, 
     {
@@ -378,8 +378,9 @@ export const bossList = [
         health: 750,
         attack: "Dragonfire/Magic/Melee/Ranged",
         region: "Fremenik Province",
-        release: `01,04,2018`,
+        release: 2018,
         hasPet: true,
+        image: 'https://oldschool.runescape.wiki/images/Vorkath.png?1ce3f'
     }, 
     {
         name: `The Whisperer`,
@@ -387,7 +388,7 @@ export const bossList = [
         health: 900,
         attack: "Magic/Melee/Ranged",
         region: "Asgarnia",
-        release: `07,27,2023`,
+        release: 2023,
         hasPet: true,
     }, 
     {
@@ -396,7 +397,7 @@ export const bossList = [
         health: 500,
         attack: "Magic/Melee/Ranged",
         region: "Tirannwn",
-        release: `01,08,2015`,
+        release: 2015,
         hasPet: true,
     }, 
 ]
