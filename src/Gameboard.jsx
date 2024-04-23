@@ -64,7 +64,6 @@ function Gameboard({guessedBosses, bossList, correctBoss}) {
     let checkSubset = (parentArray, subsetArray) => {
       return subsetArray.every((e1) => 
       {
-        console.log(parentArray.includes(e1))
         return parentArray.includes(e1)
       })
     }
@@ -72,7 +71,6 @@ function Gameboard({guessedBosses, bossList, correctBoss}) {
     let checkSubset2 = (subsetArray, parentArray) => {
       return parentArray.every((e1) => 
       {
-        console.log(subsetArray.includes(e1))
         return subsetArray.includes(e1)
       })
     }
