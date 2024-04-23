@@ -4,13 +4,6 @@ import { useEffect, useState } from "react";
 
 /* eslint-disable react/jsx-key */
 function Gameboard({guessedBosses, bossList, correctBoss}) {
-  const [guessState, setGuessState] = useState('')
-
-  // const correct = correctBoss.name === guessedBosses;
-  // const almost = !correct && guessedBosses !== "" && guessedBosses.includes(guessedBosses)
-
-  // const guessState = (correct ? "correct" : almost ? "almost" : "incorrect");
-
     if (guessedBosses.length === 0) {
       return (
         <div className="guess-container">
@@ -40,78 +33,92 @@ function Gameboard({guessedBosses, bossList, correctBoss}) {
     const [releaseStatus, setReleaseStatus] = useState('');
     const [hasPetStatus, setHasPetStatus] = useState('');
 
-    console.log(correctBoss.name);
-    console.log((bossList[boss].name))
-
     useEffect(() => {
       if (correctBoss.name === (bossList[boss].name)) {
         setNameStatus('correct')
-        console.log('correct');
       } else {
         setNameStatus('incorrect');
-        console.log('incorrect');
       }
     })
 
     useEffect(() => {
       if (correctBoss.level === (bossList[boss].level)) {
         setLevelStatus('correct')
-        console.log('correct');
+      } else if (correctBoss.level > (bossList[boss].level)) {
+        setLevelStatus('higher')
       } else {
-        setLevelStatus('incorrect');
-        console.log('incorrect');
+        setLevelStatus('lower');
       }
     })
 
     useEffect(() => {
       if (correctBoss.health === (bossList[boss].health)) {
         setHealthStatus('correct')
-        console.log('correct');
+      } else if (correctBoss.health > (bossList[boss].health)) {
+        setHealthStatus('higher');
       } else {
-        setHealthStatus('incorrect');
-        console.log('incorrect');
+        setHealthStatus('lower');
       }
     })
 
+    let checkSubset = (parentArray, subsetArray) => {
+      return subsetArray.every((e1) => 
+      {
+        console.log(parentArray.includes(e1))
+        return parentArray.includes(e1)
+      })
+    }
+
+    let checkSubset2 = (subsetArray, parentArray) => {
+      return parentArray.every((e1) => 
+      {
+        console.log(subsetArray.includes(e1))
+        return subsetArray.includes(e1)
+      })
+    }
+
     useEffect(() => {
-      if (correctBoss.attack === (bossList[boss].attack)) {
-        setHealthStatus('correct')
-        console.log('correct');
+      if ((correctBoss.attack).toString() === (bossList[boss].attack).toString()) {
+        setAttackStatus('correct')
+        return
+      } else if (checkSubset((correctBoss.attack),(bossList[boss].attack))) {
+        setAttackStatus('almost');
+        return
+      } else if (checkSubset2((bossList[boss].attack),(correctBoss.attack))) {
+        setAttackStatus('almost');
+        return
       } else {
-        setHealthStatus('incorrect');
-        console.log('incorrect');
+        setAttackStatus('incorrect');
       }
     })  
 
     useEffect(() => {
       if (correctBoss.region === (bossList[boss].region)) {
         setRegionStatus('correct')
-        console.log('correct');
       } else {
         setRegionStatus('incorrect');
-        console.log('incorrect');
       }
     })
 
     useEffect(() => {
       if (correctBoss.release === (bossList[boss].release)) {
-        setReleaseStatus('correct')
-        console.log('correct');
+        setReleaseStatus('correct');
+      } else if (correctBoss.release > (bossList[boss].release)) {
+        setReleaseStatus('higher')
       } else {
-        setReleaseStatus('incorrect');
-        console.log('incorrect');
+        setReleaseStatus('lower');
       }
     })
 
     useEffect(() => {
       if (correctBoss.hasPet === (bossList[boss].hasPet)) {
         setHasPetStatus('correct')
-        console.log('correct');
       } else {
         setHasPetStatus('incorrect');
-        console.log('incorrect');
       }
     })
+
+    let attackArray = (bossList[boss].attack).join(', ')
 
     return (
       <div className="guess-row">
@@ -119,7 +126,7 @@ function Gameboard({guessedBosses, bossList, correctBoss}) {
       <div id={nameStatus} className="boss-attribute">{(bossList[boss].name)}</div>
       <div id={levelStatus} className="boss-attribute">{(bossList[boss].level)}</div>
       <div id={healthStatus} className="boss-attribute">{(bossList[boss].health)}</div>
-      <div id={attackStatus} className="boss-attribute">{(bossList[boss].attack)}</div>
+      <div id={attackStatus} className="boss-attribute">{attackArray}</div>
       <div id={regionStatus} className="boss-attribute">{(bossList[boss].region)}</div>
       <div id={releaseStatus} className="boss-attribute">{(bossList[boss].release)}</div>
       <div id={hasPetStatus} className="boss-attribute">{(bossList[boss].hasPet)}</div>
@@ -132,7 +139,7 @@ function Gameboard({guessedBosses, bossList, correctBoss}) {
         <div className="guess-row-header">
             <div className="row-header">Image</div>
             <div className="row-header">Name</div>
-            <div className="row-header">Level</div>
+            <div className="row-header">Combat Level</div>
             <div className="row-header">Health</div>
             <div className="row-header">Attack Styles</div>
             <div className="row-header">Region</div>

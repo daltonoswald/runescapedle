@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import './searchableDropdown.css'
 
 const SearchableDropdown = ({
-    options, label, id, selectedVal, handleChange, handleGuess, level, image, region
+    options, label, id, selectedVal, handleChange, handleGuess
 }) => {
     const [query, setQuery] = useState('');
     const [isOpen, setIsOpen] = useState(false);
@@ -11,17 +11,16 @@ const SearchableDropdown = ({
     const inputRef = useRef(null);
 
     useEffect(() => {
-        document.addEventListener('click', toggle);
-        return () => document.removeEventListener('click', toggle);
+        // document.addEventListener('click', toggle);
+        document.addEventListener('click', () => {setIsOpen(false)});
     }, []);
 
     const selectOption = (option) => {
-        // setQuery(() => "");
+        setQuery(() => "");
         // handleChange(option[label]);
         // setIsOpen((isOpen) => !isOpen);
-        // console.log(option[label]);
-        // console.log(option[level]);
         handleGuess(option[label]);
+        setIsOpen(false)
     }
 
     function toggle(e) {
@@ -55,8 +54,9 @@ const SearchableDropdown = ({
             onChange={(e) => {
                 setQuery(e.target.value);
                 handleChange(null);
+                setIsOpen(true)
             }}
-            onClick={toggle}
+            onClick={() => setIsOpen(false)}
             />
         </div>
         <div className={`arrow ${isOpen ? "open" : ""}`}></div>

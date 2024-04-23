@@ -17,36 +17,26 @@ function App() {
 
   useEffect(() => {
     let randomBoss = bossList[Math.floor(Math.random()*bossList.length)]
-    // setCorrectBoss(randomBoss)
     setCorrectBoss({
       name: randomBoss.name,
       level: randomBoss.level,
       health: randomBoss.health,
       attack: randomBoss.attack,
       region: randomBoss.region,
-      // release: randomBoss.release,
       release: randomBoss.release,
       hasPet: randomBoss.hasPet,
     })
   },[bossList])
 
-  console.log(`The correctBoss name  ${correctBoss.name}`);
-  console.log(`You have guessed ${guessedBosses}`)
-  console.log(guessedBosses)
-
   function handleGuess(name) {
     const guessedNameValue = name;
-    console.log(guessedNameValue);
     let indexVal = bossList.findIndex(x => x.name === `${guessedNameValue}`)
     setGuessedBosses([...guessedBosses, indexVal]);
     if (correctBoss.name === guessedNameValue) {
-      console.log("Correct Guess");
       setStatus('Correct.')
     } else {
-      console.log("Incorrect guess");
       setStatus('Incorrect');
     }
-    console.log(name);
   }
 
   return (

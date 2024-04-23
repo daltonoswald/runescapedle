@@ -31,6 +31,8 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+
+    object-fit: contain;
 }
 
 #correct {
@@ -43,4 +45,20 @@
 
 #almost {
     background-color: orange;
+}
+
+#higher,
+#lower {
+    background-color: red;
+    color: yellow;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#higher {
+    background-image: url(/src/assets/arrow-up.svg);
+}
+
+#lower {
+    background-image: url(/src/assets/arrow-down.svg);
 }
