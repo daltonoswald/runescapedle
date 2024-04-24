@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-key */
 import { useEffect, useRef, useState } from "react";
 import './searchableDropdown.css'
 
 const SearchableDropdown = ({
-    options, label, id, selectedVal, handleChange, handleGuess
+    options, label, id, selectedVal, handleChange, handleGuess, gameOver
 }) => {
     const [query, setQuery] = useState('');
     const [isOpen, setIsOpen] = useState(false);
@@ -21,6 +22,11 @@ const SearchableDropdown = ({
         // setIsOpen((isOpen) => !isOpen);
         handleGuess(option[label]);
         setIsOpen(false)
+
+        const guessedNameValue = option[label];
+        let indexVal = options.findIndex(x => x.name === `${guessedNameValue}`)
+        // Removes the selected boss from the guessable list
+        options.splice(indexVal, 1);
     }
 
     function toggle(e) {
@@ -36,7 +42,7 @@ const SearchableDropdown = ({
 
     const filter = (options) => {
         return options.filter(
-            (option) => option[label].toLowerCase().indexOf(query.toLowerCase()) > -1
+            (option) => option[label].toLowerCase().indexOf(query.toLowerCase()) > -1,
         )
     };
 
@@ -49,7 +55,6 @@ const SearchableDropdown = ({
             ref={inputRef}
             type="text"
             value={getDisplayValue()}
-            // value=""
             name="searchTerm"
             onChange={(e) => {
                 setQuery(e.target.value);
@@ -57,6 +62,7 @@ const SearchableDropdown = ({
                 setIsOpen(true)
             }}
             onClick={() => setIsOpen(false)}
+            disabled={gameOver}
             />
         </div>
         <div className={`arrow ${isOpen ? "open" : ""}`}></div>

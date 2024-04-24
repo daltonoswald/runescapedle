@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 /* eslint-disable react/jsx-key */
 function Gameboard({guessedBosses, bossList, correctBoss}) {
+
     if (guessedBosses.length === 0) {
       return (
         <div className="guess-container">

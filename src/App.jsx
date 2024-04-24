@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-key */
 import { useState, useEffect } from 'react'
-import {format } from 'date-fns'
 import { bossList } from './bossList'
+import { options } from './options'
 import './styles.css'
 import SearchableDropdown from './SearchableDropdown';
 import Gameboard from './Gameboard';
@@ -10,6 +10,8 @@ function App() {
   const [guessedBosses, setGuessedBosses] = useState([]);
   const [guessedIndex, setGuessedIndex] = useState(-1);
   const [correctBoss, setCorrectBoss] = useState({});
+  const [gameOver, setGameOver] = useState(false);
+  const [guessCount, setGuessCount] = useState(0);
   const [status, setStatus] = useState('Please select a guess');
 
   const [value, setValue] = useState("")
@@ -32,8 +34,10 @@ function App() {
     const guessedNameValue = name;
     let indexVal = bossList.findIndex(x => x.name === `${guessedNameValue}`)
     setGuessedBosses([...guessedBosses, indexVal]);
+    setGuessCount(guessCount + 1);
     if (correctBoss.name === guessedNameValue) {
       setStatus('Correct.')
+      setGameOver(true);
     } else {
       setStatus('Incorrect');
     }
@@ -41,20 +45,17 @@ function App() {
 
   return (
     <>
-    {/* <div>You have guessed {bossList[guessedBosses].name}</div> */}
     <div>The correct boss was {correctBoss.name} {correctBoss.level} {correctBoss.health} {correctBoss.attack} {correctBoss.region} {correctBoss.release} {correctBoss.hasPet} </div>
     <div>{status}</div>
-
+    <div>Guess count: {guessCount}</div>
     <SearchableDropdown 
-      options={bossList}
+      bossList={bossList}
+      options={options}
       label="name"
-      id="id"
-      level="level"
-      image="image"
-      region="region"
       selectedVal={value}
       handleChange={(val) => setValue(val)}
       handleGuess={handleGuess}
+      gameOver={gameOver}
       />
     <Gameboard guessedBosses={guessedBosses} bossList={bossList} correctBoss={correctBoss} />
 
