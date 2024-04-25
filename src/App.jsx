@@ -45,8 +45,8 @@ function App() {
 
   return (
     <>
-    <div>The correct boss was {correctBoss.name} {correctBoss.level} {correctBoss.health} {correctBoss.attack} {correctBoss.region} {correctBoss.release} {correctBoss.hasPet} </div>
-    <div>{status}</div>
+    {/* <div>The correct boss was {correctBoss.name} {correctBoss.level} {correctBoss.health} {correctBoss.attack} {correctBoss.region} {correctBoss.release} {correctBoss.hasPet} </div>
+    <div>{status}</div> */}
     <div>Guess count: {guessCount}</div>
     <SearchableDropdown 
       bossList={bossList}

@@ -1,5 +1,4 @@
 //Still Need to add Sporadic, SLayer, Minigame, Skilling, and Raid bosses
-import ahrim from "/src/assets/bossImages/ahrim.png"
 
 export const bossList = [
     {
@@ -10,7 +9,7 @@ export const bossList = [
         region: "Morytania",
         release: 2005,
         hasPet: "No",
-        image: ahrim,
+        image: "https://oldschool.runescape.wiki/images/thumb/Ahrim_the_Blighted.png/320px-Ahrim_the_Blighted.png?33092",
     },
     {
         name: `Artio`,
@@ -20,6 +19,7 @@ export const bossList = [
         region: "Wilderness",
         release: 2023,
         hasPet: "Yes",
+        image: "https://oldschool.runescape.wiki/images/Artio.png"
     }, 
     {
         name: `Blood Moon`,
@@ -29,6 +29,7 @@ export const bossList = [
         region: "Varlamore",
         release: 2024,
         hasPet: "No",
+        image: `https://oldschool.runescape.wiki/images/Blood_Moon.png`
     },
     {
         name: `Blue Moon`,
@@ -38,6 +39,7 @@ export const bossList = [
         region: "Varlamore",
         release: 2024,
         hasPet: "No",
+        image: `https://oldschool.runescape.wiki/images/Blue_Moon.png`
     },
     {
         name: `Calisto`,
@@ -47,6 +49,7 @@ export const bossList = [
         region: "Wilderness",
         release: 2014,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Artio.png`
     }, 
     {
         name: `Calvar'ion`,
@@ -56,6 +59,7 @@ export const bossList = [
         region: "Wilderness",
         release: 2023,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Calvar%27ion.png`
     }, 
     {
         name: `Chaos Elemental`,
@@ -65,6 +69,7 @@ export const bossList = [
         region: "Wilderness",
         release: 2006,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Chaos_Elemental.png`
     }, 
     {
         name: `Chaos Fanatic`,
@@ -74,6 +79,7 @@ export const bossList = [
         region: "Wilderness",
         release: 2014,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Chaos_Fanatic.png`
     }, 
     {
         name: "Commander Zilyana",
@@ -83,6 +89,7 @@ export const bossList = [
         region: "Asgarnia",
         release: 2013,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Commander_Zilyana.png`
     },
     {
         name: `Corporeal Beast`,
@@ -92,6 +99,7 @@ export const bossList = [
         region: "Wilderness",
         release: 2014,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Corporeal_Beast.png`
     }, 
     {
         name: `Crazy Archaeologist`,
@@ -101,6 +109,7 @@ export const bossList = [
         region: "Wilderness",
         release: 2014,
         hasPet: "No",
+        image: `https://oldschool.runescape.wiki/images/Crazy_archaeologist.png`
     }, 
     {
         name: `Dagannoth Prime`,
@@ -110,6 +119,7 @@ export const bossList = [
         region: "Fremennik Province",
         release: 2005,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Dagannoth_Prime.png`
     },
     {
         name: `Dagannoth Rex`,
@@ -119,6 +129,7 @@ export const bossList = [
         region: "Fremennik Province",
         release: 2005,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Dagannoth_Rex.png`,
     },
     {
         name: `Dagannoth Supreme`,
@@ -128,6 +139,7 @@ export const bossList = [
         region: "Fremennik Province",
         release: 2005,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Dagannoth_Supreme.png`,
     },
     {
         name: `Deranged Archaeologist`,
@@ -137,6 +149,7 @@ export const bossList = [
         region: "Misthalin",
         release: 2017,
         hasPet: "No",
+        image: `https://oldschool.runescape.wiki/images/Deranged_archaeologist.png`,
     },
     {
         name: `Dharok the Wretched`,
@@ -146,6 +159,7 @@ export const bossList = [
         region: "Morytania",
         release: 2005,
         hasPet: "No",
+        image: `https://oldschool.runescape.wiki/images/Dharok_the_Wretched.png`,
     }, 
     {
         name: `Duke Sucellus`,
@@ -155,6 +169,7 @@ export const bossList = [
         region: "Fremennik Province",
         release: 2023,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Duke_Sucellus.png`,
     }, 
     {
         name: `Eclipse Moon`,
@@ -164,6 +179,7 @@ export const bossList = [
         region: "Varlamore",
         release: 2024,
         hasPet: "No",
+        image: `https://oldschool.runescape.wiki/images/Eclipse_Moon.png`,
     },
     {
         name: "General Graardor",
@@ -173,6 +189,7 @@ export const bossList = [
         region: "Asgarnia",
         release: 2013,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/General_Graardor.png`,
     },
     {
         name: `Giant Mole`,
@@ -182,6 +199,7 @@ export const bossList = [
         region: "Asgarnia",
         release: 2006,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Giant_Mole.png`,
     },
     {
         name: `Guthan the Infested`,
@@ -191,6 +209,7 @@ export const bossList = [
         region: "Morytania",
         release: 2005,
         hasPet: "No",
+        image: `https://oldschool.runescape.wiki/images/Guthan_the_Infested.png`,
     },
     {
         name: "Kalphite Queen",
@@ -200,6 +219,7 @@ export const bossList = [
         region: "Kharidian Desert",
         release: 2004,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Kalphite_Queen.png`,
     }, 
     {
         name: `Karil the Tainted`,
@@ -209,6 +229,7 @@ export const bossList = [
         region: "Morytania",
         release: 2005,
         hasPet: "No",
+        image: `https://oldschool.runescape.wiki/images/Karil_the_Tainted.png`,
     },
     {
         name: `King Black Dragon`,
@@ -218,6 +239,7 @@ export const bossList = [
         region: "Wilderness",
         release: 2002,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/King_Black_Dragon.png`,
     }, 
     {
         name: "K'ril Tsutsaroth",
@@ -227,6 +249,7 @@ export const bossList = [
         region: "Asgarnia",
         release: 2013,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/K'ril_Tsutsaroth.png`,
     },
     {
         name: "Kree'arra",
@@ -236,6 +259,7 @@ export const bossList = [
         region: "Asgarnia",
         release: 2013,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Kree%27arra.png`,
     },
     {
         name: `The Leviathan`,
@@ -245,6 +269,7 @@ export const bossList = [
         region: "Kharidian Desert",
         release: 2023,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/The_Leviathan.png`,
     }, 
     {
         name: `Nex`,
@@ -254,6 +279,7 @@ export const bossList = [
         region: "Asgarnia",
         release: 2022,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Nex.png`,
     }, 
     {
         name: `The Nightmare`,
@@ -263,6 +289,7 @@ export const bossList = [
         region: "Morytania",
         release: 2020,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/The_Nightmare.png`,
     }, 
     {
         name: `Phantom Muspah`,
@@ -272,6 +299,7 @@ export const bossList = [
         region: "Fremennik Province",
         release: 2023,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Phantom_Muspah_(ranged).png`,
     }, 
     {
         name: `Phosani's Nightmare`,
@@ -281,6 +309,7 @@ export const bossList = [
         region: "Morytania",
         release: 2021,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/The_Nightmare.png`,
     }, 
     {
         name: `Revenant Maledictus`,
@@ -290,6 +319,7 @@ export const bossList = [
         region: "Wilderness",
         release: 2022,
         hasPet: "No",
+        image: `https://oldschool.runescape.wiki/images/Revenant_maledictus.png`,
     }, 
     {
         name: `Sarachnis`,
@@ -299,6 +329,7 @@ export const bossList = [
         region: "Kourend",
         release: 2019,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Sarachnis.png`,
     },
     {
         name: `Scorpia`,
@@ -308,6 +339,7 @@ export const bossList = [
         region: 'Wilderness',
         release: 2014,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Scorpia.png`,
     }, 
     {
         name: `Scurrius`,
@@ -317,6 +349,7 @@ export const bossList = [
         region: "Misthalin",
         release: 2024,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Scurrius.png`,
     },
     {
         name: `Spindel`,
@@ -326,6 +359,7 @@ export const bossList = [
         region: "Wilderness",
         release: 2023,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Spindel.png`,
     }, 
     {
         name: `Torag the Corrupted`,
@@ -335,6 +369,7 @@ export const bossList = [
         region: "Morytania",
         release: 2005,
         hasPet: "No",
+        image: `https://oldschool.runescape.wiki/images/Torag_the_Corrupted.png`,
     }, 
     {
         name: `Vardorvis`,
@@ -344,6 +379,7 @@ export const bossList = [
         region: "Kourend",
         release: 2023,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Vardorvis.png`,
     }, 
     {
         name: `Venenatis`,
@@ -353,6 +389,7 @@ export const bossList = [
         region: "Wilderness",
         release: 2014,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Venenatis.png`,
     }, 
     {
         name: `Verac the Defiled`,
@@ -362,6 +399,7 @@ export const bossList = [
         region: "Morytania",
         release: 2005,
         hasPet: "No",
+        image: `https://oldschool.runescape.wiki/images/Verac_the_Defiled.png`,
     }, 
     {
         name: `Vet'ion`,
@@ -371,6 +409,7 @@ export const bossList = [
         region: "Wilderness",
         release: 2014,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Vet%27ion.png`,
     }, 
     {
         name: `Vorkath`,
@@ -380,7 +419,7 @@ export const bossList = [
         region: "Fremennik Province",
         release: 2018,
         hasPet: "Yes",
-        image: 'https://oldschool.runescape.wiki/images/Vorkath.png?1ce3f'
+        image: 'https://oldschool.runescape.wiki/images/Vorkath.png?'
     }, 
     {
         name: `The Whisperer`,
@@ -390,6 +429,7 @@ export const bossList = [
         region: "Asgarnia",
         release: 2023,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/The_Whisperer.png`,
     }, 
     {
         name: "Zulrah",
@@ -399,6 +439,7 @@ export const bossList = [
         region: "Tirannwn",
         release: 2015,
         hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Zulrah_(serpentine).png`,
     }, 
 ]
 

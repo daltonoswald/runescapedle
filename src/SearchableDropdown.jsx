@@ -12,6 +12,14 @@ const SearchableDropdown = ({
     const inputRef = useRef(null);
 
     useEffect(() => {
+        if (query === "") {
+          setIsOpen(false)
+        } else {
+          setIsOpen(true)
+        }
+      })
+
+    useEffect(() => {
         // document.addEventListener('click', toggle);
         document.addEventListener('click', () => {setIsOpen(false)});
     }, []);
