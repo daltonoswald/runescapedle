@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 /* eslint-disable react/jsx-key */
 function Gameboard({guessedBosses, bossList, correctBoss}) {
+  console.log(correctBoss);
 
     if (guessedBosses.length === 0) {
       return (
@@ -62,32 +63,16 @@ function Gameboard({guessedBosses, bossList, correctBoss}) {
       }
     })
 
-    let checkSubset = (parentArray, subsetArray) => {
-      return subsetArray.every((e1) => 
-      {
-        return parentArray.includes(e1)
-      })
-    }
-
-    let checkSubset2 = (subsetArray, parentArray) => {
-      return parentArray.every((e1) => 
-      {
-        return subsetArray.includes(e1)
-      })
-    }
+    const almostMatching = (bossList[boss].attack).filter(element => (correctBoss.attack).includes(element))
 
     useEffect(() => {
       if ((correctBoss.attack).toString() === (bossList[boss].attack).toString()) {
         setAttackStatus('correct')
-        return
-      } else if (checkSubset((correctBoss.attack),(bossList[boss].attack))) {
+      } else if (almostMatching.length > 0) {
         setAttackStatus('almost');
-        return
-      } else if (checkSubset2((bossList[boss].attack),(correctBoss.attack))) {
-        setAttackStatus('almost');
-        return
       } else {
         setAttackStatus('incorrect');
+
       }
     })  
 
