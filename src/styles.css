@@ -1,4 +1,5 @@
 @import "./gameboard.css";
+@import "./endPanel.css";
 
 .boss-image {
     height: 50px;

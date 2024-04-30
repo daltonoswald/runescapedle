@@ -5,6 +5,7 @@ import { options } from './options'
 import './styles.css'
 import SearchableDropdown from './SearchableDropdown';
 import Gameboard from './Gameboard';
+import EndPanel from './EndPanel';
 
 function App() {
   const [guessedBosses, setGuessedBosses] = useState([]);
@@ -27,6 +28,7 @@ function App() {
       region: randomBoss.region,
       release: randomBoss.release,
       hasPet: randomBoss.hasPet,
+      image: randomBoss.image
     })
   },[bossList])
 
@@ -58,6 +60,7 @@ function App() {
       gameOver={gameOver}
       />
     <Gameboard guessedBosses={guessedBosses} bossList={bossList} correctBoss={correctBoss} />
+    <EndPanel correctBoss={correctBoss} guessCount={guessCount} gameOver={gameOver} />
 
     </>
   )

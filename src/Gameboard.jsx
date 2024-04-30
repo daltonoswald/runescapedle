@@ -106,14 +106,14 @@ function Gameboard({guessedBosses, bossList, correctBoss}) {
 
     return (
       <div className="guess-row">
-      <img className="boss-attribute" src={(bossList[boss].image)}/>
-      <div id={nameStatus} className="boss-attribute">{(bossList[boss].name)}</div>
-      <div id={levelStatus} className="boss-attribute">{(bossList[boss].level)}</div>
-      <div id={healthStatus} className="boss-attribute">{(bossList[boss].health)}</div>
-      <div id={attackStatus} className="boss-attribute">{attackArray}</div>
-      <div id={regionStatus} className="boss-attribute">{(bossList[boss].region)}</div>
-      <div id={releaseStatus} className="boss-attribute">{(bossList[boss].release)}</div>
-      <div id={hasPetStatus} className="boss-attribute">{(bossList[boss].hasPet)}</div>
+        <img className="boss-attribute animate" src={(bossList[boss].image)}/>
+        <div id={nameStatus} className="boss-attribute animate">{(bossList[boss].name)}</div>
+        <div id={levelStatus} className="boss-attribute animate">{(bossList[boss].level)}</div>
+        <div id={healthStatus} className="boss-attribute animate">{(bossList[boss].health)}</div>
+        <div id={attackStatus} className="boss-attribute animate">{attackArray}</div>
+        <div id={regionStatus} className="boss-attribute animate">{(bossList[boss].region)}</div>
+        <div id={releaseStatus} className="boss-attribute animate">{(bossList[boss].release)}</div>
+        <div id={hasPetStatus} className="boss-attribute animate">{(bossList[boss].hasPet)}</div>
       </div>
     )
   }
