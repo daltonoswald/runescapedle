@@ -8,6 +8,7 @@ const SearchableDropdown = ({
 }) => {
     const [query, setQuery] = useState('');
     const [isOpen, setIsOpen] = useState(false);
+    const [disabled, setDisabled] = useState(false);
 
     const inputRef = useRef(null);
 
@@ -35,6 +36,10 @@ const SearchableDropdown = ({
         let indexVal = options.findIndex(x => x.name === `${guessedNameValue}`)
         // Removes the selected boss from the guessable list
         options.splice(indexVal, 1);
+        setDisabled(true);
+        setTimeout(() => {
+            setDisabled(false);
+        }, "4000");
     }
 
     function toggle(e) {
@@ -62,6 +67,7 @@ const SearchableDropdown = ({
         <input 
             ref={inputRef}
             type="text"
+            placeholder="Guess a boss..."
             value={getDisplayValue()}
             name="searchTerm"
             onChange={(e) => {
@@ -70,10 +76,10 @@ const SearchableDropdown = ({
                 setIsOpen(true)
             }}
             onClick={() => setIsOpen(false)}
-            disabled={gameOver}
+            disabled={disabled || gameOver}
             />
         </div>
-        <div className={`arrow ${isOpen ? "open" : ""}`}></div>
+        {/* <div className={`arrow ${isOpen ? "open" : ""}`}></div> */}
         </div>
 
         <div className={`options ${isOpen ? "open" : ""}`}>

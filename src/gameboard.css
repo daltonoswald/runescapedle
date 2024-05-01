@@ -1,3 +1,8 @@
+.guess-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
 .guess-row-header {
     display: flex;
     justify-content: center;

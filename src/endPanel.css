@@ -1,12 +1,16 @@
 .end-panel {
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     margin-top: 4vh;
     align-items: center;
 }
 
 .hidden {
-    display: none;
+    display:none;
+}
+
+.shown {
+    display: flex;
 }
 
 .correct-image {
@@ -16,7 +20,6 @@
 }
 
 .correct-answer {
-    display: flex;
     align-items: center;
     gap: 1vw;
     width: 10vw;

@@ -39,7 +39,9 @@ function App() {
     setGuessCount(guessCount + 1);
     if (correctBoss.name === guessedNameValue) {
       setStatus('Correct.')
-      setGameOver(true);
+      setTimeout(() => {
+        setGameOver(true);
+      }, "4000");
     } else {
       setStatus('Incorrect');
     }
