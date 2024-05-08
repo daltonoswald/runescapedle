@@ -11,9 +11,11 @@
 }
 
 .row-header {
-    width: 6vw;
-    height: 3vw;
-    border: 3px solid black;
+    width: 100px;
+    height: 75px;
+    border: 3px solid #3d3428;
+    border-bottom: 3px solid #e6e51c;
+    text-shadow: 1px 1px 2px black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,9 +31,11 @@
 }
 
 .boss-attribute {
-    width: 6vw;
-    height: 6vw;
+    width: 100px;
+    height: 100px;
     border: 3px solid black;
+    background-color: #caba9a;
+    text-shadow: 1px 1px 2px black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,21 +46,21 @@
 }
 
 #correct {
-    background-color: green;
+    background-color: darkgreen;
 }
 
 #incorrect {
-    background-color: red;
+    background-color: #8b0000;
 }
 
 #almost {
-    background-color: orange;
+    background-color: darkorange;
 }
 
 #higher,
 #lower {
-    background-color: red;
-    color: yellow;
+    background-color: #8b0000;
+    color: #e6e51c;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -85,4 +89,21 @@
 
 .animate {
     animation: flip .25s forwards;
+}
+
+@media only screen and (max-width: 600px) {
+    .guess-container {
+        width: 90vw;
+    }
+    .row-header {
+        width: 25px;
+        height: 20px;
+        font-size: 8px;
+    }
+
+    .boss-attribute {
+        width: 25px;
+        height: 25px;
+        font-size: 6%;
+    }
 }

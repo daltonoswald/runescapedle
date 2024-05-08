@@ -1,6 +1,11 @@
 @import "./gameboard.css";
 @import "./endPanel.css";
 
+html {
+    background-color: #3d3428;
+    color: #e6e51c;
+}
+
 .boss-image {
     height: 50px;
 }

@@ -1,8 +1,11 @@
 .end-panel {
-    /* display: flex; */
     flex-direction: column;
     margin-top: 4vh;
     align-items: center;
+}
+
+.correct-answer {
+    display: flex;
 }
 
 .hidden {
