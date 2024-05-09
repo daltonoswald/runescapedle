@@ -1,11 +1,21 @@
 @import "./gameboard.css";
 @import "./endPanel.css";
 
+@font-face {
+    font-family: "runeScape-Chat-07";
+    src: url("/src/assets/RuneScape-Chat-07.ttf")
+}
+
 html {
     background-color: #3d3428;
     color: #e6e51c;
+    font-family: "runeScape-Chat-07";
 }
 
 .boss-image {
     height: 50px;
+}
+
+::placeholder, input {
+    font-family: "runeScape-Chat-07";
 }
