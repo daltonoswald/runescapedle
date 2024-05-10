@@ -1,5 +1,6 @@
 function EndPanel({ correctBoss, guessCount, gameOver }) {
 
+    if (gameOver) {
     return(
         <div className={`end-panel ${gameOver ? "shown" : "hidden"}`}>
             <div>You won!</div>
@@ -10,6 +11,10 @@ function EndPanel({ correctBoss, guessCount, gameOver }) {
             <div>Number of attempts: {guessCount}</div>
         </div>
     )
+    } else {
+        <>
+        </>
+    }
 }
 
 export default EndPanel

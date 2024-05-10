@@ -17,9 +17,17 @@ function App() {
 
   const [value, setValue] = useState("")
 
+  const day = new Date().getDate();
+  const month = new Date().getMonth();
 
+  function random() {
+    let num = Math.round((day+4) / month * 39163).toString();
+    return +(num[2] + num[3]) % 44;
+  }
   useEffect(() => {
-    let randomBoss = bossList[Math.floor(Math.random()*bossList.length)]
+    // let randomBoss = bossList[Math.floor(Math.random()*bossList.length)]
+    let randomBoss = bossList[random()]
+    console.log(randomBoss);
     setCorrectBoss({
       name: randomBoss.name,
       level: randomBoss.level,
