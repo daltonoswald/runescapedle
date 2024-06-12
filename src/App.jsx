@@ -14,6 +14,7 @@ function App() {
   const [gameOver, setGameOver] = useState(false);
   const [guessCount, setGuessCount] = useState(0);
   const [status, setStatus] = useState('Please select a guess');
+  const [guessedScores, setGuessedScores] = useState();
 
   const [value, setValue] = useState("")
 
@@ -69,8 +70,8 @@ function App() {
       handleGuess={handleGuess}
       gameOver={gameOver}
       />
-    <Gameboard guessedBosses={guessedBosses} bossList={bossList} correctBoss={correctBoss} />
-    <EndPanel correctBoss={correctBoss} guessCount={guessCount} gameOver={gameOver} />
+    <Gameboard guessedBosses={guessedBosses} bossList={bossList} correctBoss={correctBoss} guessedScores={guessedScores} setGuessedScores={setGuessedScores} />
+    <EndPanel correctBoss={correctBoss} guessCount={guessCount} gameOver={gameOver} guessedScores={guessedScores} />
 
     </>
   )

@@ -1,6 +1,16 @@
-//Still Need to add Sporadic, SLayer, Minigame, Skilling, and Raid bosses
+//Still Need to add Minigame, Skilling, and Raid bosses
 
 export const bossList = [
+    {
+        name: `Abyssal Sire`,
+        level: 350,
+        health: 400,
+        attack: ["Melee"],
+        region: "Misthilan",
+        release: 2015,
+        hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Abyssal_Sire.png`,
+    }, 
     {
         name: `Ahrim the Blighted`,
         level: 98,
@@ -11,6 +21,16 @@ export const bossList = [
         hasPet: "No",
         image: "https://oldschool.runescape.wiki/images/thumb/Ahrim_the_Blighted.png/320px-Ahrim_the_Blighted.png?33092",
     },
+    {
+        name: `Alchemical Hydra`,
+        level: 426,
+        health: 1100,
+        attack: ["Magic", "Ranged"],
+        region: "Kourend",
+        release: 2019,
+        hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Alchemical_Hydra_(serpentine).png`,
+    }, 
     {
         name: `Artio`,
         level: 320,
@@ -42,6 +62,16 @@ export const bossList = [
         image: `https://oldschool.runescape.wiki/images/Blue_Moon.png`
     },
     {
+        name: `Bryophyta`,
+        level: 128,
+        health: 115,
+        attack: ["Magic", "Melee"],
+        region: "Misthalin",
+        release: 2018,
+        hasPet: "No",
+        image: `https://oldschool.runescape.wiki/images/Bryophyta.png`,
+    }, 
+    {
         name: `Calisto`,
         level: 470,
         health: 1000,
@@ -60,6 +90,16 @@ export const bossList = [
         release: 2023,
         hasPet: "Yes",
         image: `https://oldschool.runescape.wiki/images/Calvar%27ion.png`
+    }, 
+    {
+        name: `Cerberus`,
+        level: 318,
+        health: 600,
+        attack: ["Magic", "Melee", "Ranged"],
+        region: "Asgarnia",
+        release: 2015,
+        hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Cerberus.png`,
     }, 
     {
         name: `Chaos Elemental`,
@@ -142,6 +182,16 @@ export const bossList = [
         image: `https://oldschool.runescape.wiki/images/Dagannoth_Supreme.png`,
     },
     {
+        name: `Dawn`,
+        level: 228,
+        health: 450,
+        attack: ["Melee", "Ranged"],
+        region: "Morytania",
+        release: 2017,
+        hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Dawn.png`,
+    }, 
+    {
         name: `Deranged Archaeologist`,
         level: 276,
         health: 200,
@@ -170,6 +220,16 @@ export const bossList = [
         release: 2023,
         hasPet: "Yes",
         image: `https://oldschool.runescape.wiki/images/Duke_Sucellus.png`,
+    }, 
+    {
+        name: `Dusk`,
+        level: 248,
+        health: 100,
+        attack: ["Melee", "Ranged"],
+        region: "Morytania",
+        release: 2017,
+        hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Dusk.png`,
     }, 
     {
         name: `Eclipse Moon`,
@@ -212,6 +272,16 @@ export const bossList = [
         image: `https://oldschool.runescape.wiki/images/Guthan_the_Infested.png`,
     },
     {
+        name: `Hespori`,
+        level: 284,
+        health: 300,
+        attack: ["Magic", "Ranged"],
+        region: "Kourend",
+        release: 2019,
+        hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Hespori.png`,
+    }, 
+    {
         name: "Kalphite Queen",
         level: 333,
         health: 510,
@@ -252,6 +322,16 @@ export const bossList = [
         image: `https://oldschool.runescape.wiki/images/K'ril_Tsutsaroth.png`,
     },
     {
+        name: `Kraken`,
+        level: 291,
+        health: 255,
+        attack: ["Magic"],
+        region: "Kandarin",
+        release: 2014,
+        hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Kraken.png`,
+    }, 
+    {
         name: "Kree'arra",
         level: 580,
         health: 255,
@@ -270,6 +350,26 @@ export const bossList = [
         release: 2023,
         hasPet: "Yes",
         image: `https://oldschool.runescape.wiki/images/The_Leviathan.png`,
+    }, 
+    {
+        name: `The Mimic`,
+        level: 186,
+        health: 222,
+        attack: ["Magic", "Melee"],
+        region: "Kourend",
+        release: 2019,
+        hasPet: "No",
+        image: `https://oldschool.runescape.wiki/images/The_Mimic.png`,
+    }, 
+    {
+        name: `Obor`,
+        level: 106,
+        health: 120,
+        attack: ["Melee", "Ranged"],
+        region: "Misthalin",
+        release: 2016,
+        hasPet: "No",
+        image: `https://oldschool.runescape.wiki/images/Obor.png`,
     }, 
     {
         name: `Nex`,
@@ -352,6 +452,16 @@ export const bossList = [
         image: `https://oldschool.runescape.wiki/images/Scurrius.png`,
     },
     {
+        name: `Skotizo`,
+        level: 321,
+        health: 450,
+        attack: ["Magic", "Melee"],
+        region: "Kourend",
+        release: 2016,
+        hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Skotizo.png`,
+    }, 
+    {
         name: `Spindel`,
         level: 302,
         health: 515,
@@ -360,6 +470,16 @@ export const bossList = [
         release: 2023,
         hasPet: "Yes",
         image: `https://oldschool.runescape.wiki/images/Spindel.png`,
+    }, 
+    {
+        name: `Thermonuclear Smoke Devil`,
+        level: 301,
+        health: 240,
+        attack: ["Ranged"],
+        region: "Kandarin",
+        release: 2014,
+        hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Thermonuclear_smoke_devil.png`,
     }, 
     {
         name: `Torag the Corrupted`,

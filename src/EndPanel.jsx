@@ -1,4 +1,4 @@
-function EndPanel({ correctBoss, guessCount, gameOver }) {
+function EndPanel({ correctBoss, guessCount, gameOver, guessedScores }) {
 
     if (gameOver) {
     return(
@@ -15,6 +15,10 @@ function EndPanel({ correctBoss, guessCount, gameOver }) {
         <>
         </>
     }
+}
+
+function GuessedScoresLayout({score}) {
+    <p>{score}</p>
 }
 
 export default EndPanel

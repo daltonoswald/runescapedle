@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 /* eslint-disable react/jsx-key */
-function Gameboard({guessedBosses, bossList, correctBoss}) {
+function Gameboard({guessedBosses, bossList, correctBoss, guessedScores, setGuessedScores}) {
 
     if (guessedBosses.length === 0) {
       return (
@@ -17,7 +17,7 @@ function Gameboard({guessedBosses, bossList, correctBoss}) {
         <div className="guess-container">
             <GameboardHeader />
             {guessedBosses.map((boss) => 
-                <GuessedBoss bossList={bossList} boss={boss} correctBoss={correctBoss} />
+                <GuessedBoss bossList={bossList} boss={boss} correctBoss={correctBoss} guessedScores={guessedScores} setGuessedScores={setGuessedScores} />
             )}
         </div>
         </>
@@ -25,7 +25,64 @@ function Gameboard({guessedBosses, bossList, correctBoss}) {
     }
   }
 
-  function GuessedBoss({ bossList, boss, correctBoss }) {
+  function ScoreMaker( bossList, boss, correctBoss, guessedScores, setGuessedScores ) {
+    const almostMatching = (bossList[boss].attack).filter(element => (correctBoss.attack).includes(element))
+
+    const newArr = [];
+      if (correctBoss.name === (bossList[boss].name)) {
+        newArr.push('C')
+      } else {
+        newArr.push('I');
+      }
+      if (correctBoss.level === (bossList[boss].level)) {
+        newArr.push('C')
+      } else if (correctBoss.level > (bossList[boss].level)) {
+        newArr.push('H');
+      } else {
+        newArr.push('L');
+      }
+      if (correctBoss.health === (bossList[boss].health)) {
+        newArr.push('C');
+      } else if (correctBoss.health > (bossList[boss].health)) {
+        newArr.push('H');
+      } else {
+        newArr.push('L');
+      }
+      if ((correctBoss.attack).toString() === (bossList[boss].attack).toString()) {
+        newArr.push('C');
+      } else if (almostMatching.length > 0) {
+        newArr.push('A');
+      } else {
+        newArr.push('I');
+      }
+      if (correctBoss.region === (bossList[boss].region)) {
+        newArr.push('C');
+      } else {
+        newArr.push('I');
+      }
+      if (correctBoss.release === (bossList[boss].release)) {
+        newArr.push('C');
+      } else if (correctBoss.release > (bossList[boss].release)) {
+        newArr.push('H');
+      } else {
+        newArr.push('L');
+      }
+      if (correctBoss.hasPet === (bossList[boss].hasPet)) {
+        newArr.push('C');
+      } else {
+        newArr.push('I');
+      }
+      console.log(newArr);
+      console.log(guessedScores);
+      useEffect(() => {
+        setGuessedScores(newArr);
+      }, [newArr])
+      return newArr;
+      // setGuessedScores(...guessedScores, newArr);
+      // setGuessedScores(guessedScores => [...guessedScores, ...newArr]);
+  }
+
+  function GuessedBoss({ bossList, boss, correctBoss, guessedScores, setGuessedScores }) {
     const [nameStatus, setNameStatus] = useState('');
     const [levelStatus, setLevelStatus] = useState('');
     const [healthStatus, setHealthStatus] = useState('');
@@ -34,23 +91,41 @@ function Gameboard({guessedBosses, bossList, correctBoss}) {
     const [releaseStatus, setReleaseStatus] = useState('');
     const [hasPetStatus, setHasPetStatus] = useState('');
 
+    const [scoreline, setScoreline] = useState([]);
+
+    // scoreMaker(bossList, boss, correctBoss, guessedScores, setGuessedScores);
+    // ScoreMaker({bossList, boss, correctBoss, guessedScores, setGuessedScores});
+    console.log(scoreline);
+
+
+    const almostMatching = (bossList[boss].attack).filter(element => (correctBoss.attack).includes(element))
     useEffect(() => {
       if (correctBoss.name === (bossList[boss].name)) {
         setNameStatus('correct')
+        setScoreline(scoreline => [...scoreline, "C"])
+        return
       } else {
         setNameStatus('incorrect');
+        setScoreline(scoreline => [...scoreline, "I"])
+        return
       }
-    })
+    }, [])
 
     useEffect(() => {
       if (correctBoss.level === (bossList[boss].level)) {
         setLevelStatus('correct')
+        setScoreline(scoreline => [...scoreline, "C"])
+        return
       } else if (correctBoss.level > (bossList[boss].level)) {
         setLevelStatus('higher')
+        setScoreline(scoreline => [...scoreline, "H"])
+        return
       } else {
         setLevelStatus('lower');
+        setScoreline(scoreline => [...scoreline, "L"])
+        return
       }
-    })
+    }, [])
 
     useEffect(() => {
       if (correctBoss.health === (bossList[boss].health)) {
@@ -62,8 +137,6 @@ function Gameboard({guessedBosses, bossList, correctBoss}) {
       }
     })
 
-    const almostMatching = (bossList[boss].attack).filter(element => (correctBoss.attack).includes(element))
-
     useEffect(() => {
       if ((correctBoss.attack).toString() === (bossList[boss].attack).toString()) {
         setAttackStatus('correct')
@@ -71,7 +144,6 @@ function Gameboard({guessedBosses, bossList, correctBoss}) {
         setAttackStatus('almost');
       } else {
         setAttackStatus('incorrect');
-
       }
     })  
 
@@ -100,10 +172,12 @@ function Gameboard({guessedBosses, bossList, correctBoss}) {
         setHasPetStatus('incorrect');
       }
     })
+    
 
     let attackArray = (bossList[boss].attack).join(', ')
 
     return (
+      <>
       <div className="guess-row">
         <img className="boss-attribute animate" src={(bossList[boss].image)}/>
         <div id={nameStatus} className="boss-attribute animate">{(bossList[boss].name)}</div>
@@ -114,6 +188,7 @@ function Gameboard({guessedBosses, bossList, correctBoss}) {
         <div id={releaseStatus} className="boss-attribute animate">{(bossList[boss].release)}</div>
         <div id={hasPetStatus} className="boss-attribute animate">{(bossList[boss].hasPet)}</div>
       </div>
+      </>
     )
   }
 
@@ -127,7 +202,7 @@ function Gameboard({guessedBosses, bossList, correctBoss}) {
             <div className="row-header">Attack Styles</div>
             <div className="row-header">Region</div>
             <div className="row-header">Release</div>
-            <div className="row-header">Pet?</div>
+            <div className="row-header">Drops Pet</div>
         </div>
     )
   }
