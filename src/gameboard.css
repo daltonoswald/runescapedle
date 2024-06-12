@@ -41,7 +41,7 @@
     align-items: center;
     text-align: center;
     object-fit: contain;
-    font-size: 16px;
+    font-size: 20px;
     transform: rotateX(90deg);
 }
 
@@ -104,6 +104,7 @@
     .boss-attribute {
         width: 25px;
         height: 25px;
-        font-size: 6%;
+        font-size: 6px;
+        word-wrap: break-word;
     }
 }
