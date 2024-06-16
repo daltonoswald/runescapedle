@@ -224,7 +224,7 @@ export const bossList = [
     {
         name: `Dusk`,
         level: 248,
-        health: 100,
+        health: 450,
         attack: ["Melee", "Ranged"],
         region: "Morytania",
         release: 2017,
