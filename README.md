@@ -1,8 +1,8 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project was created using React + Vite.
 
-Currently, two official plugins are available:
+This is a Worlde-like game where you have to guess the daily Boss from Oldschool Runescape.
+Boss Lists can be found at https://oldschool.runescape.wiki/w/Boss#List_of_bosses
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The website is currently hosted on my Netlify: https://daltonoswald-runescapedle.netlify.app/

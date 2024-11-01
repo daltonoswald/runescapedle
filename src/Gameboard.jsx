@@ -92,10 +92,12 @@ function Gameboard({guessedBosses, bossList, correctBoss, guessedScores, setGues
     const [hasPetStatus, setHasPetStatus] = useState('');
 
     const [scoreline, setScoreline] = useState([]);
+    const [scoreSheet, setScoreSheet] = useState([]);
 
     // scoreMaker(bossList, boss, correctBoss, guessedScores, setGuessedScores);
     // ScoreMaker({bossList, boss, correctBoss, guessedScores, setGuessedScores});
     console.log(scoreline);
+    console.log(scoreSheet);
 
 
     const almostMatching = (bossList[boss].attack).filter(element => (correctBoss.attack).includes(element))
@@ -130,48 +132,69 @@ function Gameboard({guessedBosses, bossList, correctBoss, guessedScores, setGues
     useEffect(() => {
       if (correctBoss.health === (bossList[boss].health)) {
         setHealthStatus('correct')
+        setScoreline(scoreline => [...scoreline, "C"])
       } else if (correctBoss.health > (bossList[boss].health)) {
         setHealthStatus('higher');
+        setScoreline(scoreline => [...scoreline, "H"])
       } else {
         setHealthStatus('lower');
+        setScoreline(scoreline => [...scoreline, "L"])
       }
-    })
+    }, [])
 
     useEffect(() => {
       if ((correctBoss.attack).toString() === (bossList[boss].attack).toString()) {
         setAttackStatus('correct')
+        setScoreline(scoreline => [...scoreline, "C"])
       } else if (almostMatching.length > 0) {
         setAttackStatus('almost');
+        setScoreline(scoreline => [...scoreline, "A"])
       } else {
         setAttackStatus('incorrect');
+        setScoreline(scoreline => [...scoreline, "I"])
       }
-    })  
+    }, [])  
 
     useEffect(() => {
       if (correctBoss.region === (bossList[boss].region)) {
         setRegionStatus('correct')
+        setScoreline(scoreline => [...scoreline, "C"])
       } else {
         setRegionStatus('incorrect');
+        setScoreline(scoreline => [...scoreline, "I"])
       }
-    })
+    }, [])
 
     useEffect(() => {
       if (correctBoss.release === (bossList[boss].release)) {
         setReleaseStatus('correct');
+        setScoreline(scoreline => [...scoreline, "C"])
       } else if (correctBoss.release > (bossList[boss].release)) {
         setReleaseStatus('higher')
+        setScoreline(scoreline => [...scoreline, "H"])
       } else {
         setReleaseStatus('lower');
+        setScoreline(scoreline => [...scoreline, "L"])
       }
-    })
+    }, [])
 
     useEffect(() => {
       if (correctBoss.hasPet === (bossList[boss].hasPet)) {
         setHasPetStatus('correct')
+        setScoreline(scoreline => [...scoreline, "C"])
       } else {
         setHasPetStatus('incorrect');
+        setScoreline(scoreline => [...scoreline, "I"])
       }
-    })
+    }, [])
+
+    useEffect(() => {
+      if (scoreline.length === 7) {
+        setScoreSheet(scoreSheet => [...scoreSheet, scoreline])
+      } else {
+        return;
+      }
+    }, [scoreline])
     
 
     let attackArray = (bossList[boss].attack).join(', ')

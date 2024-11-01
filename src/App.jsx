@@ -68,7 +68,10 @@ function App() {
       gameOver={gameOver}
       />
     <Gameboard guessedBosses={guessedBosses} bossList={bossList} correctBoss={correctBoss} guessedScores={guessedScores} setGuessedScores={setGuessedScores} />
-    <EndPanel correctBoss={correctBoss} guessCount={guessCount} gameOver={gameOver} guessedScores={guessedScores} />
+    {(gameOver) && (
+      <EndPanel correctBoss={correctBoss} guessCount={guessCount} gameOver={gameOver} guessedScores={guessedScores} />
+    )}
+    {/* <EndPanel correctBoss={correctBoss} guessCount={guessCount} gameOver={gameOver} guessedScores={guessedScores} /> */}
 
     </>
   )

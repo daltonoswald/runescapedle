@@ -1,18 +1,22 @@
+:root {
+    --rswiki-tan: #caba9a;
+    --osrs-chat: #3d36dd;
+}
+
+
 .end-panel {
+    display: flex;
     flex-direction: column;
-    margin-top: 4vh;
     align-items: center;
+    background-color: var(--rswiki-tan);
+    color: var(--osrs-chat);
+    width: 25%;
+    margin: 4vh auto;
+    padding: 4vh 4vw;
+    border: 3px solid black;
 }
 
 .correct-answer {
-    display: flex;
-}
-
-.hidden {
-    display:none;
-}
-
-.shown {
     display: flex;
 }
 
