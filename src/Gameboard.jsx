@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 /* eslint-disable react/jsx-key */
-function Gameboard({guessedBosses, bossList, correctBoss, guessedScores, setGuessedScores}) {
+function Gameboard({guessedBosses, bossList, correctBoss, guessedScores, setGuessedScores, scoreSheet, setScoreSheet}) {
 
     if (guessedBosses.length === 0) {
       return (
@@ -17,7 +17,14 @@ function Gameboard({guessedBosses, bossList, correctBoss, guessedScores, setGues
         <div className="guess-container">
             <GameboardHeader />
             {guessedBosses.map((boss) => 
-                <GuessedBoss bossList={bossList} boss={boss} correctBoss={correctBoss} guessedScores={guessedScores} setGuessedScores={setGuessedScores} />
+                <GuessedBoss 
+                  bossList={bossList} 
+                  boss={boss} 
+                  correctBoss={correctBoss}
+                  guessedScores={guessedScores} 
+                  setGuessedScores={setGuessedScores}
+                  scoreSheet={scoreSheet} 
+                  setScoreSheet={setScoreSheet} />
             )}
         </div>
         </>
@@ -25,64 +32,7 @@ function Gameboard({guessedBosses, bossList, correctBoss, guessedScores, setGues
     }
   }
 
-  function ScoreMaker( bossList, boss, correctBoss, guessedScores, setGuessedScores ) {
-    const almostMatching = (bossList[boss].attack).filter(element => (correctBoss.attack).includes(element))
-
-    const newArr = [];
-      if (correctBoss.name === (bossList[boss].name)) {
-        newArr.push('C')
-      } else {
-        newArr.push('I');
-      }
-      if (correctBoss.level === (bossList[boss].level)) {
-        newArr.push('C')
-      } else if (correctBoss.level > (bossList[boss].level)) {
-        newArr.push('H');
-      } else {
-        newArr.push('L');
-      }
-      if (correctBoss.health === (bossList[boss].health)) {
-        newArr.push('C');
-      } else if (correctBoss.health > (bossList[boss].health)) {
-        newArr.push('H');
-      } else {
-        newArr.push('L');
-      }
-      if ((correctBoss.attack).toString() === (bossList[boss].attack).toString()) {
-        newArr.push('C');
-      } else if (almostMatching.length > 0) {
-        newArr.push('A');
-      } else {
-        newArr.push('I');
-      }
-      if (correctBoss.region === (bossList[boss].region)) {
-        newArr.push('C');
-      } else {
-        newArr.push('I');
-      }
-      if (correctBoss.release === (bossList[boss].release)) {
-        newArr.push('C');
-      } else if (correctBoss.release > (bossList[boss].release)) {
-        newArr.push('H');
-      } else {
-        newArr.push('L');
-      }
-      if (correctBoss.hasPet === (bossList[boss].hasPet)) {
-        newArr.push('C');
-      } else {
-        newArr.push('I');
-      }
-      console.log(newArr);
-      console.log(guessedScores);
-      useEffect(() => {
-        setGuessedScores(newArr);
-      }, [newArr])
-      return newArr;
-      // setGuessedScores(...guessedScores, newArr);
-      // setGuessedScores(guessedScores => [...guessedScores, ...newArr]);
-  }
-
-  function GuessedBoss({ bossList, boss, correctBoss, guessedScores, setGuessedScores }) {
+  function GuessedBoss({ bossList, boss, correctBoss, guessedScores, setGuessedScores, scoreSheet, setScoreSheet }) {
     const [nameStatus, setNameStatus] = useState('');
     const [levelStatus, setLevelStatus] = useState('');
     const [healthStatus, setHealthStatus] = useState('');
@@ -92,12 +42,6 @@ function Gameboard({guessedBosses, bossList, correctBoss, guessedScores, setGues
     const [hasPetStatus, setHasPetStatus] = useState('');
 
     const [scoreline, setScoreline] = useState([]);
-    const [scoreSheet, setScoreSheet] = useState([]);
-
-    // scoreMaker(bossList, boss, correctBoss, guessedScores, setGuessedScores);
-    // ScoreMaker({bossList, boss, correctBoss, guessedScores, setGuessedScores});
-    console.log(scoreline);
-    console.log(scoreSheet);
 
 
     const almostMatching = (bossList[boss].attack).filter(element => (correctBoss.attack).includes(element))
@@ -190,7 +134,7 @@ function Gameboard({guessedBosses, bossList, correctBoss, guessedScores, setGues
 
     useEffect(() => {
       if (scoreline.length === 7) {
-        setScoreSheet(scoreSheet => [...scoreSheet, scoreline])
+        setScoreSheet((prevScores) => [...prevScores, [scoreline]]);
       } else {
         return;
       }

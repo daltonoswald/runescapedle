@@ -15,6 +15,7 @@ function App() {
   const [guessCount, setGuessCount] = useState(0);
   const [status, setStatus] = useState('Please select a guess');
   const [guessedScores, setGuessedScores] = useState();
+  const [scoreSheet, setScoreSheet] = useState([]);
 
   const [value, setValue] = useState("")
 
@@ -67,9 +68,17 @@ function App() {
       handleGuess={handleGuess}
       gameOver={gameOver}
       />
-    <Gameboard guessedBosses={guessedBosses} bossList={bossList} correctBoss={correctBoss} guessedScores={guessedScores} setGuessedScores={setGuessedScores} />
+    <Gameboard guessedBosses={guessedBosses} bossList={bossList} correctBoss={correctBoss} guessedScores={guessedScores} setGuessedScores={setGuessedScores}
+      scoreSheet={scoreSheet} setScoreSheet={setScoreSheet} />
     {(gameOver) && (
-      <EndPanel correctBoss={correctBoss} guessCount={guessCount} gameOver={gameOver} guessedScores={guessedScores} />
+      <EndPanel 
+        correctBoss={correctBoss} 
+        guessCount={guessCount} 
+        gameOver={gameOver} 
+        guessedScores={guessedScores} 
+        scoreSheet={scoreSheet} 
+        setScoreSheet={setScoreSheet}
+        />
     )}
     {/* <EndPanel correctBoss={correctBoss} guessCount={guessCount} gameOver={gameOver} guessedScores={guessedScores} /> */}
 
