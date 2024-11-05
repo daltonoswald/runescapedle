@@ -1,38 +1,6 @@
-/* eslint-disable react/prop-types */
+import { useState, useEffect } from "react";
 
-import { useEffect, useState } from "react";
-
-/* eslint-disable react/jsx-key */
-function Gameboard({guessedBosses, bossList, correctBoss, guessedScores, setGuessedScores, scoreSheet, setScoreSheet}) {
-
-    if (guessedBosses.length === 0) {
-      return (
-        <div className="guess-container">
-            <GameboardHeader />
-        </div>
-    )
-    } else {
-      return (
-        <>
-        <div className="guess-container">
-            <GameboardHeader />
-            {guessedBosses.map((boss) => 
-                <GuessedBoss 
-                  bossList={bossList} 
-                  boss={boss} 
-                  correctBoss={correctBoss}
-                  guessedScores={guessedScores} 
-                  setGuessedScores={setGuessedScores}
-                  scoreSheet={scoreSheet} 
-                  setScoreSheet={setScoreSheet} />
-            )}
-        </div>
-        </>
-        )
-    }
-  }
-
-  function GuessedBoss({ bossList, boss, correctBoss, guessedScores, setGuessedScores, scoreSheet, setScoreSheet }) {
+export default function GuessedBoss({ bossList, boss, correctBoss, guessedScores, setGuessedScores, scoreSheet, setScoreSheet }) {
     const [nameStatus, setNameStatus] = useState('');
     const [levelStatus, setLevelStatus] = useState('');
     const [healthStatus, setHealthStatus] = useState('');
@@ -48,11 +16,13 @@ function Gameboard({guessedBosses, bossList, correctBoss, guessedScores, setGues
     useEffect(() => {
       if (correctBoss.name === (bossList[boss].name)) {
         setNameStatus('correct')
-        setScoreline(scoreline => [...scoreline, "C"])
+        // setScoreline(scoreline => [...scoreline, "C"])
+        setScoreline(scoreline => [...scoreline, "🟩"])
         return
       } else {
         setNameStatus('incorrect');
-        setScoreline(scoreline => [...scoreline, "I"])
+        // setScoreline(scoreline => [...scoreline, "I"])
+        setScoreline(scoreline => [...scoreline, "🟥"])
         return
       }
     }, [])
@@ -60,15 +30,18 @@ function Gameboard({guessedBosses, bossList, correctBoss, guessedScores, setGues
     useEffect(() => {
       if (correctBoss.level === (bossList[boss].level)) {
         setLevelStatus('correct')
-        setScoreline(scoreline => [...scoreline, "C"])
+        // setScoreline(scoreline => [...scoreline, "C"])
+        setScoreline(scoreline => [...scoreline, "🟩"])
         return
       } else if (correctBoss.level > (bossList[boss].level)) {
         setLevelStatus('higher')
-        setScoreline(scoreline => [...scoreline, "H"])
+        // setScoreline(scoreline => [...scoreline, "H"])
+        setScoreline(scoreline => [...scoreline, "⬆️"])
         return
       } else {
         setLevelStatus('lower');
-        setScoreline(scoreline => [...scoreline, "L"])
+        // setScoreline(scoreline => [...scoreline, "L"])
+        setScoreline(scoreline => [...scoreline, "⬇️"])
         return
       }
     }, [])
@@ -76,59 +49,72 @@ function Gameboard({guessedBosses, bossList, correctBoss, guessedScores, setGues
     useEffect(() => {
       if (correctBoss.health === (bossList[boss].health)) {
         setHealthStatus('correct')
-        setScoreline(scoreline => [...scoreline, "C"])
+        // setScoreline(scoreline => [...scoreline, "C"])
+        setScoreline(scoreline => [...scoreline, "🟩"])
       } else if (correctBoss.health > (bossList[boss].health)) {
         setHealthStatus('higher');
-        setScoreline(scoreline => [...scoreline, "H"])
+        // setScoreline(scoreline => [...scoreline, "H"])
+        setScoreline(scoreline => [...scoreline, "⬆️"])
       } else {
         setHealthStatus('lower');
-        setScoreline(scoreline => [...scoreline, "L"])
+        // setScoreline(scoreline => [...scoreline, "L"])
+        setScoreline(scoreline => [...scoreline, "⬇️"])
       }
     }, [])
 
     useEffect(() => {
       if ((correctBoss.attack).toString() === (bossList[boss].attack).toString()) {
         setAttackStatus('correct')
-        setScoreline(scoreline => [...scoreline, "C"])
+        // setScoreline(scoreline => [...scoreline, "C"])
+        setScoreline(scoreline => [...scoreline, "🟩"])
       } else if (almostMatching.length > 0) {
         setAttackStatus('almost');
-        setScoreline(scoreline => [...scoreline, "A"])
+        // setScoreline(scoreline => [...scoreline, "A"])
+        setScoreline(scoreline => [...scoreline, "🟧"])
       } else {
         setAttackStatus('incorrect');
-        setScoreline(scoreline => [...scoreline, "I"])
+        // setScoreline(scoreline => [...scoreline, "I"])
+        setScoreline(scoreline => [...scoreline, "🟥"])
       }
     }, [])  
 
     useEffect(() => {
       if (correctBoss.region === (bossList[boss].region)) {
         setRegionStatus('correct')
-        setScoreline(scoreline => [...scoreline, "C"])
+        // setScoreline(scoreline => [...scoreline, "C"])
+        setScoreline(scoreline => [...scoreline, "🟩"])
       } else {
         setRegionStatus('incorrect');
-        setScoreline(scoreline => [...scoreline, "I"])
+        // setScoreline(scoreline => [...scoreline, "I"])
+        setScoreline(scoreline => [...scoreline, "🟥"])
       }
     }, [])
 
     useEffect(() => {
       if (correctBoss.release === (bossList[boss].release)) {
         setReleaseStatus('correct');
-        setScoreline(scoreline => [...scoreline, "C"])
+        // setScoreline(scoreline => [...scoreline, "C"])
+        setScoreline(scoreline => [...scoreline, "🟩"])
       } else if (correctBoss.release > (bossList[boss].release)) {
         setReleaseStatus('higher')
-        setScoreline(scoreline => [...scoreline, "H"])
+        // setScoreline(scoreline => [...scoreline, "H"])
+        setScoreline(scoreline => [...scoreline, "⬆️"])
       } else {
         setReleaseStatus('lower');
-        setScoreline(scoreline => [...scoreline, "L"])
+        // setScoreline(scoreline => [...scoreline, "L"])
+        setScoreline(scoreline => [...scoreline, "⬇️"])
       }
     }, [])
 
     useEffect(() => {
       if (correctBoss.hasPet === (bossList[boss].hasPet)) {
         setHasPetStatus('correct')
-        setScoreline(scoreline => [...scoreline, "C"])
+        // setScoreline(scoreline => [...scoreline, "C"])
+        setScoreline(scoreline => [...scoreline, "🟩"])
       } else {
         setHasPetStatus('incorrect');
-        setScoreline(scoreline => [...scoreline, "I"])
+        // setScoreline(scoreline => [...scoreline, "I"])
+        setScoreline(scoreline => [...scoreline, "🟥"])
       }
     }, [])
 
@@ -158,20 +144,3 @@ function Gameboard({guessedBosses, bossList, correctBoss, guessedScores, setGues
       </>
     )
   }
-
-  function GameboardHeader() {
-    return (
-        <div className="guess-row-header">
-            <div className="row-header">Image</div>
-            <div className="row-header">Name</div>
-            <div className="row-header">Combat Level</div>
-            <div className="row-header">Health</div>
-            <div className="row-header">Attack Styles</div>
-            <div className="row-header">Region</div>
-            <div className="row-header">Release</div>
-            <div className="row-header">Drops Pet</div>
-        </div>
-    )
-  }
-
-  export default Gameboard

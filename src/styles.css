@@ -1,6 +1,3 @@
-@import "./gameboard.css";
-@import "./endPanel.css";
-
 @font-face {
     font-family: "runeScape-Chat-07";
     src: url("/src/assets/RuneScape-Chat-07.ttf")

@@ -33,3 +33,7 @@
     justify-content: center;
     text-align: center;
 }
+
+.scoreline {
+    margin: 0;
+}

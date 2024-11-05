@@ -79,7 +79,6 @@ const SearchableDropdown = ({
             disabled={disabled || gameOver}
             />
         </div>
-        {/* <div className={`arrow ${isOpen ? "open" : ""}`}></div> */}
         </div>
 
         <div className={`options ${isOpen ? "open" : ""}`}>

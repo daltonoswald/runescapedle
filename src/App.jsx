@@ -3,13 +3,13 @@ import { useState, useEffect } from 'react'
 import { bossList } from './bossList'
 import { options } from './options'
 import './styles.css'
-import SearchableDropdown from './SearchableDropdown';
-import Gameboard from './Gameboard';
-import EndPanel from './EndPanel';
+import SearchableDropdown from './dropdown/SearchableDropdown';
+import Gameboard from './gameboard/Gameboard';
+import EndPanel from './endPanel/EndPanel';
 
 function App() {
   const [guessedBosses, setGuessedBosses] = useState([]);
-  const [guessedIndex, setGuessedIndex] = useState(-1);
+  // const [guessedIndex, setGuessedIndex] = useState(-1);
   const [correctBoss, setCorrectBoss] = useState({});
   const [gameOver, setGameOver] = useState(false);
   const [guessCount, setGuessCount] = useState(0);
@@ -23,7 +23,7 @@ function App() {
   const month = new Date().getMonth();
 
   function random() {
-    let num = Math.round((day+4) / month * 39163).toString();
+    let num = Math.round((day+4) / month * 13034431).toString();
     return +(num[2] + num[3]) % 44;
   }
   useEffect(() => {
@@ -80,7 +80,6 @@ function App() {
         setScoreSheet={setScoreSheet}
         />
     )}
-    {/* <EndPanel correctBoss={correctBoss} guessCount={guessCount} gameOver={gameOver} guessedScores={guessedScores} /> */}
 
     </>
   )

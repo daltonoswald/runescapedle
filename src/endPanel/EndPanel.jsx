@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import "./endPanel.css";
 function EndPanel({ correctBoss, guessCount, scoreSheet, setScoreSheet }) {
     console.log(scoreSheet);
 
@@ -11,7 +11,7 @@ function EndPanel({ correctBoss, guessCount, scoreSheet, setScoreSheet }) {
             </div>
             <div className="number-attempts">Number of attempts: {guessCount}</div>
             {scoreSheet.map(score => (
-                <p>{score}</p>
+                <p className="scoreline">{score}</p>
             ))}
         </div>
     )
