@@ -96,15 +96,15 @@
         width: 90vw;
     }
     .row-header {
-        width: 25px;
+        width: 36px;
         height: 20px;
         font-size: 8px;
     }
 
     .boss-attribute {
-        width: 25px;
-        height: 25px;
-        font-size: 6px;
+        width: 36px;
+        height: 36px;
+        font-size: 10px;
         word-wrap: break-word;
     }
 }

@@ -36,4 +36,15 @@
 
 .scoreline {
     margin: 0;
+    font-size: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+    .end-panel {
+        width: 75vw;
+    }
+    .correct-image {
+        width: 25vw;
+        height: 25vw;
+    }
 }
