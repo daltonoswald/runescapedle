@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function GuessedBoss({ bossList, boss, correctBoss, guessedScores, setGuessedScores, scoreSheet, setScoreSheet }) {
     const [nameStatus, setNameStatus] = useState('');
@@ -8,12 +8,15 @@ export default function GuessedBoss({ bossList, boss, correctBoss, guessedScores
     const [regionStatus, setRegionStatus] = useState('');
     const [releaseStatus, setReleaseStatus] = useState('');
     const [hasPetStatus, setHasPetStatus] = useState('');
+    const scrollRef = useRef(null);
+    const scrollTo = () => scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
     const [scoreline, setScoreline] = useState([]);
 
 
     const almostMatching = (bossList[boss].attack).filter(element => (correctBoss.attack).includes(element))
     useEffect(() => {
+      scrollTo();
       if (correctBoss.name === (bossList[boss].name)) {
         setNameStatus('correct')
         // setScoreline(scoreline => [...scoreline, "C"])
@@ -131,7 +134,7 @@ export default function GuessedBoss({ bossList, boss, correctBoss, guessedScores
 
     return (
       <>
-      <div className="guess-row">
+      <div className="guess-row" ref={scrollRef} >
         <img className="boss-attribute animate" src={(bossList[boss].image)}/>
         <div id={nameStatus} className="boss-attribute animate">{(bossList[boss].name)}</div>
         <div id={levelStatus} className="boss-attribute animate">{(bossList[boss].level)}</div>

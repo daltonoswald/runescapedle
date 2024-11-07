@@ -1,10 +1,23 @@
+import { useEffect, useRef } from "react";
 import "./endPanel.css";
-function EndPanel({ correctBoss, guessCount, scoreSheet, setScoreSheet }) {
 
-    console.log(scoreSheet);
+function EndPanel({ gameOver, correctBoss, guessCount, scoreSheet, setScoreSheet}) {
+    const scrollRef = useRef(null);
+    const scrollTo = () => scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    useEffect(() => {
+        if (gameOver) {
+            scrollTo();
+        }
+    })
 
     function shareableString(){
-        const copyMessage = `I solved the daily Runescapedle in ${guessCount} attempts!`
+        let copyMessage;
+        if (scoreSheet.length === 1 ){
+            copyMessage = `I solved the daily Runescapedle in ${guessCount} attempt!`
+        } else {
+            copyMessage = `I solved the daily Runescapedle in ${guessCount} attempts!`
+        }
         const copyMessageLink = `https://daltonoswald-runescapedle.netlify.app`
         navigator.clipboard.writeText(
                 copyMessage + 
@@ -14,19 +27,8 @@ function EndPanel({ correctBoss, guessCount, scoreSheet, setScoreSheet }) {
                 copyMessageLink)
     }
 
-    function shareLink() {
-        const copyMessage = `I solved the daily Runescapedle in ${guessCount} attempts!`
-        const copyMessageLink = `https://daltonoswald-runescapedle.netlify.app`
-        navigator.share(
-                copyMessage + 
-                "\n" + 
-                scoreSheet.toString().replace(/(.*?,.*?,.*?,.*?,.*?,.*?,.*?,)/g, '$1'+'\n').replaceAll(",", "") + 
-                "\n" + 
-                copyMessageLink)
-    }
-
     return(
-        <div className='end-panel'>
+        <div className='end-panel' ref={scrollRef}>
             <div className='win-message'>You won!</div>
             <div className="correct-answer">
                 <img className="correct-image" src={(correctBoss.image)} />
@@ -36,8 +38,6 @@ function EndPanel({ correctBoss, guessCount, scoreSheet, setScoreSheet }) {
             {scoreSheet.map(score => (
                 <p key={score} className="scoreline">{score}</p>
             ))}
-            {/* <button onClick={() => {navigator.clipboard.writeText(scoreSheet.toString().replace(/[!.,]/g, ''))}}>Share Results</button> */}
-            <button className="share-button" onClick={shareLink}>Share Results</button>
             <button className="share-button" onClick={shareableString}>Copy Results</button>
 
         </div>

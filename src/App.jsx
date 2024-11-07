@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-key */
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { bossList } from './bossList'
 import { options } from './options'
 import './styles.css'
@@ -16,8 +16,8 @@ function App() {
   const [status, setStatus] = useState('Please select a guess');
   const [guessedScores, setGuessedScores] = useState();
   const [scoreSheet, setScoreSheet] = useState([]);
-
   const [value, setValue] = useState("")
+
 
   const day = new Date().getDate();
   const month = new Date().getMonth();
@@ -29,7 +29,6 @@ function App() {
   useEffect(() => {
     // let randomBoss = bossList[Math.floor(Math.random()*bossList.length)]
     let randomBoss = bossList[random()]
-    console.log(randomBoss);
     setCorrectBoss({
       name: randomBoss.name,
       level: randomBoss.level,
@@ -72,9 +71,9 @@ function App() {
       scoreSheet={scoreSheet} setScoreSheet={setScoreSheet} />
     {(gameOver) && (
       <EndPanel 
+        gameOver={gameOver}
         correctBoss={correctBoss} 
         guessCount={guessCount} 
-        gameOver={gameOver} 
         guessedScores={guessedScores} 
         scoreSheet={scoreSheet} 
         setScoreSheet={setScoreSheet}
