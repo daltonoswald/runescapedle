@@ -5,10 +5,19 @@ function EndPanel({ correctBoss, guessCount, scoreSheet, setScoreSheet }) {
 
     function shareableString(){
         const copyMessage = `I solved the daily Runescapedle in ${guessCount} attempts!`
-                // Working with an extra space in last result -
-        // navigator.clipboard.writeText(copyMessage + "\n" + (scoreSheet.toString().replaceAll(" ", "\n").replaceAll(",", "")))
         const copyMessageLink = `https://daltonoswald-runescapedle.netlify.app`
         navigator.clipboard.writeText(
+                copyMessage + 
+                "\n" + 
+                scoreSheet.toString().replace(/(.*?,.*?,.*?,.*?,.*?,.*?,.*?,)/g, '$1'+'\n').replaceAll(",", "") + 
+                "\n" + 
+                copyMessageLink)
+    }
+
+    function shareLink() {
+        const copyMessage = `I solved the daily Runescapedle in ${guessCount} attempts!`
+        const copyMessageLink = `https://daltonoswald-runescapedle.netlify.app`
+        navigator.share(
                 copyMessage + 
                 "\n" + 
                 scoreSheet.toString().replace(/(.*?,.*?,.*?,.*?,.*?,.*?,.*?,)/g, '$1'+'\n').replaceAll(",", "") + 
@@ -28,7 +37,8 @@ function EndPanel({ correctBoss, guessCount, scoreSheet, setScoreSheet }) {
                 <p key={score} className="scoreline">{score}</p>
             ))}
             {/* <button onClick={() => {navigator.clipboard.writeText(scoreSheet.toString().replace(/[!.,]/g, ''))}}>Share Results</button> */}
-            <button className="share-button" onClick={shareableString}>Share Results</button>
+            <button className="share-button" onClick={shareLink}>Share Results</button>
+            <button className="share-button" onClick={shareableString}>Copy Results</button>
 
         </div>
     )
