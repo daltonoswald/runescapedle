@@ -6,6 +6,7 @@ import './styles.css'
 import SearchableDropdown from './dropdown/SearchableDropdown';
 import Gameboard from './gameboard/Gameboard';
 import EndPanel from './endPanel/EndPanel';
+import Key from './key/Key';
 
 function App() {
   const [guessedBosses, setGuessedBosses] = useState([]);
@@ -17,6 +18,7 @@ function App() {
   const [guessedScores, setGuessedScores] = useState();
   const [scoreSheet, setScoreSheet] = useState([]);
   const [value, setValue] = useState("")
+  const [openKey, setOpenKey] = useState(true);
 
 
   const day = new Date().getDate();
@@ -79,6 +81,9 @@ function App() {
         setScoreSheet={setScoreSheet}
         />
     )}
+      {(openKey && guessCount > 0) && (
+        <Key openKey={openKey} setOpenKey={setOpenKey} />
+      )}
 
     </>
   )

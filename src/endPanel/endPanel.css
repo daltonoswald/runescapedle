@@ -13,7 +13,12 @@
     width: 25%;
     margin: 4vh auto;
     padding: 4vh 4vw;
+    gap: 2px;
     border: 3px solid black;
+}
+
+.win-message {
+    margin: 0;
 }
 
 .correct-answer {
@@ -32,6 +37,7 @@
     width: 10vw;
     justify-content: center;
     text-align: center;
+    font-size: 24px;
 }
 
 .scoreline {

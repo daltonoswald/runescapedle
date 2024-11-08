@@ -29,10 +29,10 @@ function EndPanel({ gameOver, correctBoss, guessCount, scoreSheet, setScoreSheet
 
     return(
         <div className='end-panel' ref={scrollRef}>
-            <div className='win-message'>You won!</div>
+            <h2 className='win-message'>You won!</h2>
             <div className="correct-answer">
                 <img className="correct-image" src={(correctBoss.image)} />
-                <div className='correct-name'>You guessed {correctBoss.name}</div>
+                <div className='correct-name'>{correctBoss.name}</div>
             </div>
             <div className="number-attempts">Number of attempts: {guessCount}</div>
             {scoreSheet.map(score => (
