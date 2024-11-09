@@ -32,8 +32,24 @@
     margin: 0;
 }
 
+.close-key-button {
+    background-color: #b8a37c;
+    color: black;
+    font-size: 16px;
+    font-weight: 700;
+    border: 2px solid black;
+
+    padding: 4px 8px;
+}
+
+.close-key-button:hover {
+    /* box-shadow: inset 0px 0px 5px black; */
+    filter: brightness(90%)
+}
+
 .key-container {
     display: flex;
+    justify-content: center;
     gap: 4px;
 }
 
@@ -49,4 +65,16 @@
     text-align: center;
     object-fit: contain;
     font-size: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .key-modal {
+        width: 65vw;
+    }
+
+    .key {
+        width: 36px;
+        height: 36px;
+        font-size: 10px;
+    }
 }

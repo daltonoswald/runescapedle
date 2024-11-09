@@ -17,3 +17,22 @@ html {
 ::placeholder, input {
     font-family: "runeScape-Chat-07";
 }
+
+button:hover {
+    /* box-shadow: insert 0px 0px 5px black; */
+}
+
+button {
+    background-color: #b8a37c;
+    color: black;
+    font-size: 16px;
+    font-weight: 700;
+    border: 2px solid black;
+
+    padding: 4px 8px;
+}
+
+button:hover {
+    /* box-shadow: inset 0px 0px 5px black; */
+    filter: brightness(90%)
+}

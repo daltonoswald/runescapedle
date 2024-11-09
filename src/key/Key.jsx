@@ -6,7 +6,7 @@ export default function Key( {openKey, setOpenKey }) {
         <div className="key-modal">
             <div className='key-top'>
                 <h3>Key</h3>
-                <button onClick={() => setOpenKey(false)}>X</button>
+                <button className='close-key-button' onClick={() => setOpenKey(false)}>X</button>
             </div>
                 <div className='key-container'>
                     <div id="correct" className='key'>Correct</div>
