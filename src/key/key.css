@@ -1,9 +1,30 @@
+:root {
+    --rswiki-tan: #caba9a;
+    --osrs-chat: #3d36dd;
+}
+
 .key-modal {
     background-color: #caba9a;
     width: fit-content;
     padding: 1em 2em 2em 2em;
     border: 3px solid black;
+    border-radius: 8px;
     margin: 4vh auto; 
+
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.25s;
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .key-top {
@@ -28,7 +49,7 @@
 
 .key-top > h3 {
     text-align: center;
-    text-shadow: 0px 0px 5px black;
+    color: var(--osrs-chat);
     margin: 0;
 }
 
