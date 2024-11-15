@@ -385,7 +385,7 @@ export const bossList = [
         name: "Kree'arra",
         level: 580,
         health: 255,
-        attack: ["Magic", "Ranged", "Melee"],
+        attack: ["Magic", "Melee", "Ranged"],
         region: "Asgarnia",
         release: 2013,
         hasPet: "Yes",
