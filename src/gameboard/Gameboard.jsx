@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
-
 import GuessedBoss from "./GuessedBoss";
 import GameboardHeader from "./GameboardHeader";
 import "./gameboard.css";
-function Gameboard({guessedBosses, bossList, correctBoss, guessedScores, setGuessedScores, scoreSheet, setScoreSheet}) {
+function Gameboard({guessedBosses, bossList, correctBoss, setScoreSheet}) {
 
     if (guessedBosses.length === 0) {
       return (
@@ -22,9 +21,6 @@ function Gameboard({guessedBosses, bossList, correctBoss, guessedScores, setGues
                   bossList={bossList} 
                   boss={boss} 
                   correctBoss={correctBoss}
-                  guessedScores={guessedScores} 
-                  setGuessedScores={setGuessedScores}
-                  scoreSheet={scoreSheet} 
                   setScoreSheet={setScoreSheet} />
             )}
         </div>

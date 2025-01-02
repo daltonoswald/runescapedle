@@ -10,12 +10,16 @@ import Key from './key/Key';
 
 function App() {
   const [guessedBosses, setGuessedBosses] = useState([]);
-  // const [guessedIndex, setGuessedIndex] = useState(-1);
+  // const [guessedBosses, setGuessedBosses] = useState(() => {
+  //   const localValue = localStorage.getItem('ITEMS')
+  //   if (localValue == null) return []
+
+  //   return JSON.parse(localValue);
+  // });
   const [correctBoss, setCorrectBoss] = useState({});
   const [gameOver, setGameOver] = useState(false);
   const [guessCount, setGuessCount] = useState(0);
-  const [status, setStatus] = useState('Please select a guess');
-  const [guessedScores, setGuessedScores] = useState();
+  const [status, setStatus] = useState('Guess a boss...');
   const [scoreSheet, setScoreSheet] = useState([]);
   const [value, setValue] = useState("")
   const [openKey, setOpenKey] = useState(true);
@@ -25,10 +29,11 @@ function App() {
   const month = new Date().getMonth();
 
   function random() {
-    let num = Math.round((day+4) / month * 13034431).toString();
-    return +(num[2] + num[3]) % 44;
+    let num = Math.round((day+4) / (month+1) * 13034431).toString();
+    // return +(num[2] + num[3]) % 44;
+    return +(num[2] + num[3]) % bossList.length;
   }
-  useEffect(() => {
+  useEffect(() => {    
     // let randomBoss = bossList[Math.floor(Math.random()*bossList.length)]
     let randomBoss = bossList[random()]
     setCorrectBoss({
@@ -49,14 +54,19 @@ function App() {
     setGuessedBosses([...guessedBosses, indexVal]);
     setGuessCount(guessCount + 1);
     if (correctBoss.name === guessedNameValue) {
-      setStatus('Correct.')
       setTimeout(() => {
         setGameOver(true);
+        setStatus('You won!')
       }, "4000");
     } else {
-      setStatus('Incorrect');
+      // setStatus('Incorrect');
     }
   }
+
+  // useEffect(() => {
+  //   localStorage.setItem('ITEMS', JSON.stringify(guessedBosses))
+  //   console.log(guessedBosses);
+  // }, [guessedBosses])
 
   return (
     <>
@@ -67,18 +77,16 @@ function App() {
       selectedVal={value}
       handleChange={(val) => setValue(val)}
       handleGuess={handleGuess}
+      status={status}
       gameOver={gameOver}
       />
-    <Gameboard guessedBosses={guessedBosses} bossList={bossList} correctBoss={correctBoss} guessedScores={guessedScores} setGuessedScores={setGuessedScores}
-      scoreSheet={scoreSheet} setScoreSheet={setScoreSheet} />
+    <Gameboard guessedBosses={guessedBosses} bossList={bossList} correctBoss={correctBoss} setScoreSheet={setScoreSheet} />
     {(gameOver) && (
       <EndPanel 
         gameOver={gameOver}
         correctBoss={correctBoss} 
         guessCount={guessCount} 
-        guessedScores={guessedScores} 
         scoreSheet={scoreSheet} 
-        setScoreSheet={setScoreSheet}
         />
     )}
       {(openKey && guessCount > 0) && (

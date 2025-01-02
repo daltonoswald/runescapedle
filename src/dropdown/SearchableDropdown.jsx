@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import './searchableDropdown.css'
 
 const SearchableDropdown = ({
-    options, label, id, selectedVal, handleChange, handleGuess, gameOver
+    options, label, id, selectedVal, handleChange, handleGuess, status, gameOver
 }) => {
     const [query, setQuery] = useState('');
     const [isOpen, setIsOpen] = useState(false);
@@ -21,14 +21,11 @@ const SearchableDropdown = ({
       })
 
     useEffect(() => {
-        // document.addEventListener('click', toggle);
         document.addEventListener('click', () => {setIsOpen(false)});
     }, []);
 
     const selectOption = (option) => {
         setQuery(() => "");
-        // handleChange(option[label]);
-        // setIsOpen((isOpen) => !isOpen);
         handleGuess(option[label]);
         setIsOpen(false)
 
@@ -40,10 +37,6 @@ const SearchableDropdown = ({
         setTimeout(() => {
             setDisabled(false);
         }, "4000");
-    }
-
-    function toggle(e) {
-        setIsOpen(e && e.target === inputRef.current);
     }
 
     const getDisplayValue = () => {
@@ -67,7 +60,8 @@ const SearchableDropdown = ({
         <input 
             ref={inputRef}
             type="text"
-            placeholder="Guess a boss..."
+            // placeholder="Guess a boss..."
+            placeholder={status}
             value={getDisplayValue()}
             name="searchTerm"
             onChange={(e) => {

@@ -92,7 +92,7 @@ export const bossList = [
         image: `https://oldschool.runescape.wiki/images/Bryophyta.png`,
     }, 
     {
-        name: `Calisto`,
+        name: `Callisto`,
         level: 470,
         health: 1000,
         attack: ["Magic", "Melee", "Ranged"],

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import "./endPanel.css";
 
-function EndPanel({ gameOver, correctBoss, guessCount, scoreSheet, setScoreSheet}) {
+function EndPanel({ gameOver, correctBoss, guessCount, scoreSheet}) {
     const scrollRef = useRef(null);
     const scrollTo = () => scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
