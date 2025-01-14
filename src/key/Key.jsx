@@ -12,8 +12,8 @@ export default function Key( {openKey, setOpenKey }) {
                     <div id="correct" className='key'>Correct</div>
                     <div id='incorrect' className='key'>Incorrect</div>
                     <div id='almost' className='key'>Partially Correct</div>
-                    <div id='higher' className='key'>Corecct answer is higher</div>
-                    <div id='lower' className='key'>Corecct answer is lower</div>
+                    <div id='higher' className='key'>Correct answer is higher</div>
+                    <div id='lower' className='key'>Correct answer is lower</div>
                 </div>
         </div>
     )

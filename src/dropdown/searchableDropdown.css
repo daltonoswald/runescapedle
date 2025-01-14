@@ -68,17 +68,28 @@
     box-sizing: border-box;
     color: #3d36dd;
     cursor: pointer;
-    display: block;
+    /* display: block; */
+    display: flex;
+    gap: 4px;
     padding: 8px 10px;
+    align-items: center;
   }
   
   .dropdown .option.selected,
   .dropdown .option:hover {
     background-color: #ada085;
-    color: #333;
+    color: #3d36dd;
+  }
+  
+  .boss-image-container {
+    min-width: 50px;
+    height: 50px;
+    /* border: 1px solid black; */
+    text-align: center;
+  }
 
-    /* background-color: #5c5346;
-    color: #fefe1f; */
+  .boss-image {
+    height: 50px;
   }
 
 

@@ -86,7 +86,9 @@ const SearchableDropdown = ({
                         }`}
                         key={`${id}-${index}`}
                     >
-                        <img src={(option.image)} className="boss-image"/> 
+                        <div className='boss-image-container'>
+                            <img src={(option.image)} className="boss-image"/>
+                        </div>
                         {option[label]} 
                     </div>
                 )

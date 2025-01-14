@@ -10,10 +10,6 @@ html {
     font-size: 20px;
 }
 
-.boss-image {
-    height: 50px;
-}
-
 ::placeholder, input {
     font-family: "runeScape-Chat-07";
 }
@@ -34,5 +30,6 @@ button {
 
 button:hover {
     /* box-shadow: inset 0px 0px 5px black; */
-    filter: brightness(90%)
+    filter: brightness(90%);
+    cursor: pointer;
 }
