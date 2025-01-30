@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect, useRef } from "react";
 
-// export default function GuessedBoss({ bossList, boss, correctBoss, guessedScores, setGuessedScores, scoreSheet, setScoreSheet }) {
   export default function GuessedBoss({ bossList, boss, correctBoss, setScoreSheet }) {
     const [nameStatus, setNameStatus] = useState('');
     const [levelStatus, setLevelStatus] = useState('');

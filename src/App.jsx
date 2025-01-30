@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-key */
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { bossList } from './bossList'
 import { options } from './options'
 import './styles.css'
@@ -90,7 +90,7 @@ function App() {
         />
     )}
       {(openKey && guessCount > 0) && (
-        <Key openKey={openKey} setOpenKey={setOpenKey} />
+        <Key setOpenKey={setOpenKey} />
       )}
 
     </>

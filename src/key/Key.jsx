@@ -1,6 +1,6 @@
 import './key.css';
 
-export default function Key( {openKey, setOpenKey }) {
+export default function Key( { setOpenKey }) {
 
     return (
         <div className="key-modal">
