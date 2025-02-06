@@ -82,6 +82,16 @@ export const bossList = [
         image: `https://oldschool.runescape.wiki/images/Blue_Moon.png`
     },
     {
+        name: 'Branda the Fire Queen',
+        level: 350,
+        health: 600,
+        attack: ['Melee'],
+        region: 'Asgarnia',
+        release: 2025,
+        hasPet: 'Yes',
+        image: `https://oldschool.runescape.wiki/images/Branda_the_Fire_Queen.png`
+    },
+    {
         name: `Bryophyta`,
         level: 128,
         health: 115,
@@ -280,6 +290,16 @@ export const bossList = [
         release: 2024,
         hasPet: "No",
         image: `https://oldschool.runescape.wiki/images/Eclipse_Moon.png`,
+    },
+    {
+        name: 'Eldric the Ice King',
+        level: 350,
+        health: 600,
+        attack: ['Melee'],
+        region: 'Asgarnia',
+        release: 2025,
+        hasPet: 'Yes',
+        image: `https://oldschool.runescape.wiki/images/Eldric_the_Ice_King.png`
     },
     {
         name: "General Graardor",

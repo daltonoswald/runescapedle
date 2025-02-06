@@ -82,6 +82,16 @@ export const options = [
         image: `https://oldschool.runescape.wiki/images/Blue_Moon.png`
     },
     {
+        name: 'Branda the Fire Queen',
+        level: 350,
+        health: 600,
+        attack: ['Melee'],
+        region: 'Asgarnia',
+        release: 2025,
+        hasPet: 'Yes',
+        image: `https://oldschool.runescape.wiki/images/Branda_the_Fire_Queen.png`
+    },
+    {
         name: `Bryophyta`,
         level: 128,
         health: 115,
@@ -166,7 +176,7 @@ export const options = [
         level: 864,
         health: 1000,
         attack: ["Magic", "Ranged"],
-        region: "Prifddinas",
+        region: "Tirannwn",
         release: 2019,
         hasPet: "Yes",
         image: `https://oldschool.runescape.wiki/images/Corrupted_Hunllef.png`,
@@ -186,7 +196,7 @@ export const options = [
         level: 674,
         health: 600,
         attack: ["Magic", "Ranged"],
-        region: "Prifddinas",
+        region: "Tirannwn",
         release: 2019,
         hasPet: "Yes",
         image: `https://oldschool.runescape.wiki/images/Crystalline_Hunllef.png`,
@@ -280,6 +290,16 @@ export const options = [
         release: 2024,
         hasPet: "No",
         image: `https://oldschool.runescape.wiki/images/Eclipse_Moon.png`,
+    },
+    {
+        name: 'Eldric the Ice King',
+        level: 350,
+        health: 600,
+        attack: ['Melee'],
+        region: 'Asgarnia',
+        release: 2025,
+        hasPet: 'Yes',
+        image: `https://oldschool.runescape.wiki/images/Eldric_the_Ice_King.png`
     },
     {
         name: "General Graardor",
@@ -642,7 +662,6 @@ export const options = [
         image: `https://oldschool.runescape.wiki/images/Zulrah_(serpentine).png`,
     }, 
 ]
-
 
 
 // const placeHolder = [
