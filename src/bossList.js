@@ -424,7 +424,7 @@ export const bossList = [
     {
         name: `The Mimic`,
         level: 186,
-        health: 222,
+        health: 230,
         attack: ["Magic", "Melee"],
         region: "Kourend",
         release: 2019,

@@ -16,7 +16,7 @@ function App() {
 
   //   return JSON.parse(localValue);
   // });
-  const [correctBoss, setCorrectBoss] = useState({});
+  const [correctBoss, setCorrectBoss] = useState(null);
   const [gameOver, setGameOver] = useState(false);
   const [guessCount, setGuessCount] = useState(0);
   const [status, setStatus] = useState('Guess a boss...');
