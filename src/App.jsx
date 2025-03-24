@@ -7,6 +7,7 @@ import SearchableDropdown from './dropdown/SearchableDropdown';
 import Gameboard from './gameboard/Gameboard';
 import EndPanel from './endPanel/EndPanel';
 import Key from './key/Key';
+import Nav from './nav/Nav';
 
 function App() {
   const [guessedBosses, setGuessedBosses] = useState([]);
@@ -70,6 +71,7 @@ function App() {
 
   return (
     <>
+    <Nav setOpenKey={setOpenKey} />
     <SearchableDropdown 
       bossList={bossList}
       options={options}

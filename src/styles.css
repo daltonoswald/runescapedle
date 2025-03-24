@@ -3,6 +3,10 @@
     src: url("/src/assets/RuneScape-Chat-07.ttf")
 }
 
+body {
+    margin: 0;
+}
+
 html {
     background-color: #3d3428;
     color: #e6e51c;

@@ -1,0 +1,10 @@
+:root {
+    --rswiki-tan: #caba9a;
+    --osrs-chat: #3d36dd;
+}
+
+.nav {
+    background-color: var(--rswiki-tan);
+    padding: 2px;
+    border-bottom: 1px solid black;
+}
