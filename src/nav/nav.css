@@ -7,4 +7,20 @@
     background-color: var(--rswiki-tan);
     padding: 2px;
     border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-icon {
+    height: 24px;
+}
+
+.nav-icon:hover {
+    cursor: pointer;
 }

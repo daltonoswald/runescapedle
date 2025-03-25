@@ -71,7 +71,10 @@ function App() {
 
   return (
     <>
-    <Nav setOpenKey={setOpenKey} />
+    <Nav 
+      setOpenKey={setOpenKey}
+      guessCount={guessCount}
+      />
     <SearchableDropdown 
       bossList={bossList}
       options={options}
