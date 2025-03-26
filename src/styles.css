@@ -1,3 +1,8 @@
+:root {
+    --rswiki-tan: #caba9a;
+    --osrs-chat: #3d36dd;
+}
+
 @font-face {
     font-family: "runeScape-Chat-07";
     src: url("/src/assets/RuneScape-Chat-07.ttf")
@@ -37,3 +42,13 @@ button:hover {
     filter: brightness(90%);
     cursor: pointer;
 }
+
+a {
+    text-decoration: none;
+    color: var(--osrs-chat)
+}
+
+a:hover {
+    text-decoration: underline;
+}
+

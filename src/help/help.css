@@ -1,0 +1,50 @@
+:root {
+    --rswiki-tan: #caba9a;
+    --osrs-chat: #3d36dd;
+}
+
+.help-module {
+    background-color: var(--rswiki-tan);
+    color: var(--osrs-chat);
+    padding: 1em 2em 2em 2em;
+    border: 3px solid black;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #000;
+
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    /* position: fixed;
+    margin: auto;
+    inset: 0px;
+    width: 25vw;
+    height: 10vh; */
+}
+
+.help-top {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    align-items: center;
+    justify-content: center;
+    justify-items: start;
+    margin-bottom: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+    .help-module {
+        width: 75vw;
+        padding: 1em 4vw 2em 4vw;
+    }
+
+    .help-top > h1 {
+        font-size: 24px;
+    }
+    
+    p {
+        font-size: 16px;
+    }
+}

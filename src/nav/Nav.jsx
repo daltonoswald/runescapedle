@@ -1,11 +1,18 @@
 /* eslint-disable react/prop-types */
 import keyIcon from '../assets/key.svg'
+import helpIcon from '../assets/help.svg'
 import githubIcon from '../assets/github-original.svg'
 import linkedinIcon from '../assets/linkedin-original.svg'
 import cottageIcon from '../assets/cottage.svg'
 import './nav.css'
 
-function Nav({ setOpenKey, guessCount }) {
+function Nav({ setOpenKey, guessCount, setOpenHelp }) {
+
+    function toggleHelpModule(e) {
+        e.preventDefault();
+        console.log('open')
+        setOpenHelp(help => !help)
+    }
 
     function toggleKey(e) {
         e.preventDefault()
@@ -19,6 +26,7 @@ function Nav({ setOpenKey, guessCount }) {
     return (
         <div className='nav'>
             <div className='nav-left'>
+                <img src={helpIcon} className='nav-icon' onClick={toggleHelpModule} alt='help icon' />
                 <img src={keyIcon} className='nav-icon' onClick={toggleKey} alt='key icon' />
             </div>
             <div className='nav-right'>

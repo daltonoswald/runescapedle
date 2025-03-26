@@ -7,6 +7,7 @@ import SearchableDropdown from './dropdown/SearchableDropdown';
 import Gameboard from './gameboard/Gameboard';
 import EndPanel from './endPanel/EndPanel';
 import Key from './key/Key';
+import Help from './help/Help';
 import Nav from './nav/Nav';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
   const [status, setStatus] = useState('Guess a boss...');
   const [scoreSheet, setScoreSheet] = useState([]);
   const [value, setValue] = useState("")
+  const [openHelp, setOpenHelp] = useState(false)
   const [openKey, setOpenKey] = useState(true);
 
 
@@ -74,6 +76,7 @@ function App() {
     <Nav 
       setOpenKey={setOpenKey}
       guessCount={guessCount}
+      setOpenHelp={setOpenHelp}
       />
     <SearchableDropdown 
       bossList={bossList}
@@ -86,6 +89,9 @@ function App() {
       gameOver={gameOver}
       />
     <Gameboard guessedBosses={guessedBosses} bossList={bossList} correctBoss={correctBoss} setScoreSheet={setScoreSheet} />
+    {(openHelp) && (
+      <Help setOpenHelp={setOpenHelp}/>
+    )}
     {(gameOver) && (
       <EndPanel 
         gameOver={gameOver}
