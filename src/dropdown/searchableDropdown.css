@@ -94,7 +94,25 @@
 
 
 @media only screen and (max-width: 600px) {
+
+  .selected-value > input {
+    height: 36px;
+  }
+
+  .dropdown .options {
+    max-height: 150px;
+  }
+
   .dropdown {
     width: 75%;
+  }
+
+  .option {
+    height: 36px;
+    margin: 4px 0;
+  }
+
+  .boss-image {
+    height: 36px;
   }
 }

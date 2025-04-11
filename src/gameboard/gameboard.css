@@ -3,11 +3,17 @@
     margin: 0 auto;
 }
 
-.guess-row-header {
-    display: flex;
+.guess-row-header,
+.guess-row {
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4px;
+    gap: 4px; */
+    display: grid;
+    grid-template-columns: repeat(8, 110px);
+    gap: 12px;
+    justify-items: center;
+    justify-content: center;
 }
 
 .row-header {
@@ -23,10 +29,10 @@
 }
 
 .guess-row {
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4px;
+    gap: 4px; */
     margin-top: 1vh;
 }
 
@@ -95,12 +101,19 @@
     .guess-container {
         width: 90vw;
     }
+
+    .guess-row-header,
+    .guess-row {
+        grid-template-columns: repeat(8, 40px);
+        gap: 4px;
+    }
+
     .row-header {
         width: 36px;
         height: 20px;
         font-size: 8px;
         border: 1px solid #3d3428;
-        border-bottom: 3px solid #e6e51c;
+        border-bottom: 1px solid #e6e51c;
     }
 
     .boss-attribute {
