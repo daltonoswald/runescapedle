@@ -5,10 +5,17 @@
 
 .nav {
     background-color: var(--rswiki-tan);
-    padding: 2px 2vw;
+    /* padding: 2px 2vw; */
     border-bottom: 1px solid black;
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 94%;
+    padding: 0 3%;
+    z-index: 3;
+    height: 3vh;
 }
 
 .nav-left,
