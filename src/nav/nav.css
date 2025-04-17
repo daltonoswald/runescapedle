@@ -7,6 +7,7 @@
     background-color: var(--rswiki-tan);
     /* padding: 2px 2vw; */
     border-bottom: 1px solid black;
+    box-shadow: 0 5px 4px #0000001a;
     display: flex;
     justify-content: space-between;
     position: fixed;
