@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import './searchableDropdown.css'
 
 const SearchableDropdown = ({
-    options, label, id, selectedVal, handleChange, handleGuess, status, gameOver
+    options, label, id, selectedVal, handleChange, handleGuess, status, setStatus, gameOver
 }) => {
     const [query, setQuery] = useState('');
     const [isOpen, setIsOpen] = useState(false);
@@ -36,6 +36,7 @@ const SearchableDropdown = ({
         setDisabled(true);
         setTimeout(() => {
             setDisabled(false);
+            setStatus('Try another guess!')
         }, "4000");
     }
 
@@ -67,6 +68,7 @@ const SearchableDropdown = ({
             onChange={(e) => {
                 setQuery(e.target.value);
                 handleChange(null);
+                setStatus('Please wait...')
                 setIsOpen(true)
             }}
             onClick={() => setIsOpen(false)}

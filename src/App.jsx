@@ -86,6 +86,7 @@ function App() {
       handleChange={(val) => setValue(val)}
       handleGuess={handleGuess}
       status={status}
+      setStatus={setStatus}
       gameOver={gameOver}
       />
     <Gameboard guessedBosses={guessedBosses} bossList={bossList} correctBoss={correctBoss} setScoreSheet={setScoreSheet} />
