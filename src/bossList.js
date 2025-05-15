@@ -652,6 +652,16 @@ export const bossList = [
         image: `https://oldschool.runescape.wiki/images/The_Whisperer.png`,
     }, 
     {
+        name: 'Yama',
+        level: 1238,
+        health: 2500,
+        attack: ["Magic", "Melee", "Ranged"],
+        region: "Kourend",
+        release: 2025,
+        hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Yama.png`
+    },
+    {
         name: "Zulrah",
         level: 725,
         health: 500,
