@@ -4,7 +4,7 @@ export const bossList = [
     {
         name: `Abyssal Sire`,
         level: 350,
-        health: 400,
+        health: 425,
         attack: ["Melee"],
         region: "Misthilan",
         release: 2015,
