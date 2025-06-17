@@ -624,7 +624,7 @@ export const bossList = [
     {
         name: `Vet'ion`,
         level: 454,
-        health: 150,
+        health: 255,
         attack: ["Magic", "Melee"],
         region: "Wilderness",
         release: 2014,
