@@ -263,8 +263,8 @@ export const options = [
     }, 
     {
         name: `Duke Sucellus`,
-        level: 768,
-        health: 440,
+        level: 758,
+        health: 485,
         attack: ["Magic", "Melee"],
         region: "Fremennik Province",
         release: 2023,
