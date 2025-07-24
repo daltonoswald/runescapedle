@@ -262,6 +262,16 @@ export const options = [
         image: `https://oldschool.runescape.wiki/images/Dharok_the_Wretched.png`,
     }, 
     {
+        name: `Doom of Mokhaiotl`,
+        level: 605,
+        health: 525,
+        attack: ["Magic", "Melee", "Ranged"],
+        region: "Varlamore",
+        release: 2025,
+        hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Doom_of_Mokhaiotl.png`,
+    },
+    {
         name: `Duke Sucellus`,
         level: 758,
         health: 485,
