@@ -532,6 +532,16 @@ export const options = [
         image: `https://oldschool.runescape.wiki/images/Scurrius.png`,
     },
     {
+        name: `Shellbane Gryphon`,
+        level: 235,
+        health: 400,
+        attack: ["Melee", "Ranged"],
+        region: "The Great Conch",
+        release: 2025,
+        hasPet: "Yes",
+        image: `https://oldschool.runescape.wiki/images/Shellbane_gryphon.png`
+    },
+    {
         name: `Skotizo`,
         level: 321,
         health: 450,
