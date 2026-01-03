@@ -246,7 +246,7 @@ export const options = [
         level: 276,
         health: 200,
         attack: ["Melee", "Ranged"],
-        region: "Misthalin",
+        region: "Fossil Island",
         release: 2017,
         hasPet: "No",
         image: `https://oldschool.runescape.wiki/images/Deranged_archaeologist.png`,
