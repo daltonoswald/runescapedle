@@ -463,7 +463,7 @@ export const options = [
     }, 
     {
         name: `The Nightmare`,
-        level: 841,
+        level: 814,
         health: 2400,
         attack: ["Magic", "Melee", "Ranged"],
         region: "Morytania",
